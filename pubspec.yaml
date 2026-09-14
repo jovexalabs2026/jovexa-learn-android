@@ -1,0 +1,34 @@
+name: jovexa_learn
+description: "Jovexa Learn: free coding education by Jovexa Labs. Learn code. Build skills. Create more."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^16.0.0
+  shared_preferences: ^2.3.0
+  webview_flutter: ^4.10.0
+  url_launcher: ^6.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.0
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/brand/app-icon.png"
+  adaptive_icon_background: "#05060F"
+  adaptive_icon_foreground: "assets/brand/app-icon-foreground.png"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/content/
+    - assets/brand/

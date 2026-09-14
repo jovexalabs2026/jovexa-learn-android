@@ -1,0 +1,551 @@
+{
+  "categories": [
+    "HTML Elements",
+    "CSS Properties",
+    "JavaScript Methods",
+    "Python Built-ins",
+    "SQL Commands",
+    "Git Commands"
+  ],
+  "entries": [
+    {
+      "id": "html-a",
+      "category": "HTML Elements",
+      "name": "<a>",
+      "description": "Turns text or other content into a clickable link. The href attribute sets where the browser goes when the link is activated.",
+      "example": "<a href=\"/pricing\">See pricing</a>"
+    },
+    {
+      "id": "html-img",
+      "category": "HTML Elements",
+      "name": "<img>",
+      "description": "Displays a picture on the page. Always pair src with alt text so the image still makes sense to screen readers or when it fails to load.",
+      "example": "<img src=\"cat.jpg\" alt=\"A sleeping cat\">"
+    },
+    {
+      "id": "html-div",
+      "category": "HTML Elements",
+      "name": "<div>",
+      "description": "A plain block-level box with no meaning of its own. Use it to group related content together for styling or layout.",
+      "example": "<div class=\"card\">Card content</div>"
+    },
+    {
+      "id": "html-span",
+      "category": "HTML Elements",
+      "name": "<span>",
+      "description": "A plain inline wrapper for a small piece of text. Handy when you want to style just a few words inside a sentence.",
+      "example": "<p>Total: <span class=\"highlight\">42</span></p>"
+    },
+    {
+      "id": "html-p",
+      "category": "HTML Elements",
+      "name": "<p>",
+      "description": "Marks a paragraph of text. Browsers add spacing between paragraphs so long content stays readable.",
+      "example": "<p>Shipping takes three to five days.</p>"
+    },
+    {
+      "id": "html-h1",
+      "category": "HTML Elements",
+      "name": "<h1>",
+      "description": "The main heading of a page. Each page should normally have just one, with h2 through h6 used for smaller subheadings.",
+      "example": "<h1>Bake Better Bread</h1>"
+    },
+    {
+      "id": "html-ul",
+      "category": "HTML Elements",
+      "name": "<ul>",
+      "description": "A bulleted list for items where order does not matter. Every entry inside it must be an li element.",
+      "example": "<ul><li>Flour</li><li>Water</li></ul>"
+    },
+    {
+      "id": "html-ol",
+      "category": "HTML Elements",
+      "name": "<ol>",
+      "description": "A numbered list for steps or rankings where order matters. The browser handles the numbering for you.",
+      "example": "<ol><li>Preheat oven</li><li>Mix dough</li></ol>"
+    },
+    {
+      "id": "html-li",
+      "category": "HTML Elements",
+      "name": "<li>",
+      "description": "One item inside a ul or ol list. It can hold text, links, or even a whole nested list.",
+      "example": "<li>Add two cups of flour</li>"
+    },
+    {
+      "id": "html-table",
+      "category": "HTML Elements",
+      "name": "<table>",
+      "description": "Lays out data in rows and columns. Best for genuinely tabular content like schedules and price grids, not page layout.",
+      "example": "<table><tr><th>Day</th></tr>\n<tr><td>Monday</td></tr></table>"
+    },
+    {
+      "id": "html-form",
+      "category": "HTML Elements",
+      "name": "<form>",
+      "description": "Wraps a group of inputs so their values can be sent somewhere. The action and method attributes control where and how the data is submitted.",
+      "example": "<form action=\"/signup\" method=\"post\">\n  <input name=\"email\"></form>"
+    },
+    {
+      "id": "html-input",
+      "category": "HTML Elements",
+      "name": "<input>",
+      "description": "A single field the user can fill in. The type attribute switches it between text, email, checkbox, number, and many other modes.",
+      "example": "<input type=\"email\" name=\"email\" placeholder=\"you@example.com\">"
+    },
+    {
+      "id": "html-button",
+      "category": "HTML Elements",
+      "name": "<button>",
+      "description": "A clickable control for triggering an action, such as submitting a form or running a script. Its label goes between the opening and closing tags.",
+      "example": "<button type=\"submit\">Create account</button>"
+    },
+    {
+      "id": "html-section",
+      "category": "HTML Elements",
+      "name": "<section>",
+      "description": "Groups one distinct chunk of a page, like a features area or a testimonials block. It usually starts with its own heading.",
+      "example": "<section>\n  <h2>Our Story</h2></section>"
+    },
+    {
+      "id": "html-nav",
+      "category": "HTML Elements",
+      "name": "<nav>",
+      "description": "Holds the main navigation links of a site or page. Marking the menu with nav helps assistive technology find it quickly.",
+      "example": "<nav><a href=\"/\">Home</a> <a href=\"/blog\">Blog</a></nav>"
+    },
+    {
+      "id": "css-display",
+      "category": "CSS Properties",
+      "name": "display",
+      "description": "Decides how an element takes up space and how its children are arranged. Common values include block, inline, flex, grid, and none.",
+      "example": ".menu { display: flex; }"
+    },
+    {
+      "id": "css-color",
+      "category": "CSS Properties",
+      "name": "color",
+      "description": "Sets the color of the text inside an element. It accepts names, hex codes, rgb(), and hsl() values.",
+      "example": "h1 { color: #2b6cb0; }"
+    },
+    {
+      "id": "css-background",
+      "category": "CSS Properties",
+      "name": "background",
+      "description": "A shorthand for painting the area behind an element. It can combine a color, an image, a gradient, and positioning in one line.",
+      "example": ".hero { background: linear-gradient(#222, #444); }"
+    },
+    {
+      "id": "css-margin",
+      "category": "CSS Properties",
+      "name": "margin",
+      "description": "Adds empty space outside an element, pushing its neighbors away. One value covers all four sides, or you can set each side separately.",
+      "example": ".card { margin: 16px auto; }"
+    },
+    {
+      "id": "css-padding",
+      "category": "CSS Properties",
+      "name": "padding",
+      "description": "Adds space inside an element, between its border and its content. Great for giving buttons and cards breathing room.",
+      "example": "button { padding: 8px 16px; }"
+    },
+    {
+      "id": "css-border",
+      "category": "CSS Properties",
+      "name": "border",
+      "description": "Draws a line around the edge of an element. The shorthand takes a width, a style such as solid or dashed, and a color.",
+      "example": ".avatar { border: 2px solid #333; }"
+    },
+    {
+      "id": "css-font-size",
+      "category": "CSS Properties",
+      "name": "font-size",
+      "description": "Controls how large text renders. Relative units like rem respect user settings, so they usually beat fixed pixels.",
+      "example": "p { font-size: 1.125rem; }"
+    },
+    {
+      "id": "css-font-family",
+      "category": "CSS Properties",
+      "name": "font-family",
+      "description": "Picks the typeface for text. List fallbacks after commas so the browser has options if the first font is unavailable.",
+      "example": "body { font-family: \"Inter\", sans-serif; }"
+    },
+    {
+      "id": "css-width",
+      "category": "CSS Properties",
+      "name": "width",
+      "description": "Sets how wide an element is. It works with fixed units like px or flexible ones like percentages.",
+      "example": ".sidebar { width: 240px; }"
+    },
+    {
+      "id": "css-height",
+      "category": "CSS Properties",
+      "name": "height",
+      "description": "Sets how tall an element is. Leave it unset when possible so content can grow naturally without clipping.",
+      "example": ".banner { height: 60vh; }"
+    },
+    {
+      "id": "css-flex",
+      "category": "CSS Properties",
+      "name": "flex",
+      "description": "A shorthand on flex items that controls how they grow, shrink, and what size they start from. Setting flex: 1 makes items share leftover space evenly.",
+      "example": ".item { flex: 1 1 200px; }"
+    },
+    {
+      "id": "css-gap",
+      "category": "CSS Properties",
+      "name": "gap",
+      "description": "Adds consistent space between items in a flex or grid container. Much cleaner than juggling margins on every child.",
+      "example": ".grid { gap: 12px 20px; }"
+    },
+    {
+      "id": "css-grid-template-columns",
+      "category": "CSS Properties",
+      "name": "grid-template-columns",
+      "description": "Defines the column layout of a grid container. The repeat() function and fr units make even, flexible tracks easy.",
+      "example": ".gallery { grid-template-columns: repeat(3, 1fr); }"
+    },
+    {
+      "id": "css-position",
+      "category": "CSS Properties",
+      "name": "position",
+      "description": "Changes how an element is placed in the page flow. Values like relative, absolute, fixed, and sticky unlock offsets through top, right, bottom, and left.",
+      "example": ".badge { position: absolute; top: 8px; right: 8px; }"
+    },
+    {
+      "id": "css-border-radius",
+      "category": "CSS Properties",
+      "name": "border-radius",
+      "description": "Rounds the corners of an element. Small values soften cards, and a very large value turns a square avatar into a circle.",
+      "example": ".pill { border-radius: 999px; }"
+    },
+    {
+      "id": "js-array-map",
+      "category": "JavaScript Methods",
+      "name": "Array.map()",
+      "description": "Builds a new array by running a function on every item of the original. The source array is left untouched.",
+      "example": "const doubled = [1, 2, 3].map(n => n * 2);\n// [2, 4, 6]"
+    },
+    {
+      "id": "js-array-filter",
+      "category": "JavaScript Methods",
+      "name": "Array.filter()",
+      "description": "Returns a new array containing only the items that pass a test function. Items that return false are dropped.",
+      "example": "const adults = ages.filter(age => age >= 18);"
+    },
+    {
+      "id": "js-array-foreach",
+      "category": "JavaScript Methods",
+      "name": "Array.forEach()",
+      "description": "Runs a function once for each item in an array. Use it for side effects like logging, since it does not build a new array.",
+      "example": "names.forEach(name => console.log(name));"
+    },
+    {
+      "id": "js-array-push",
+      "category": "JavaScript Methods",
+      "name": "Array.push()",
+      "description": "Appends one or more values to the end of an array and returns the new length. This changes the original array in place.",
+      "example": "const cart = [\"apple\"];\ncart.push(\"banana\");"
+    },
+    {
+      "id": "js-array-includes",
+      "category": "JavaScript Methods",
+      "name": "Array.includes()",
+      "description": "Checks whether an array contains a specific value and answers with true or false.",
+      "example": "[\"red\", \"green\"].includes(\"green\"); // true"
+    },
+    {
+      "id": "js-string-split",
+      "category": "JavaScript Methods",
+      "name": "String.split()",
+      "description": "Cuts a string into an array of pieces using a separator you choose. Splitting on a comma is a quick way to read simple lists.",
+      "example": "\"one,two,three\".split(\",\"); // [\"one\", \"two\", \"three\"]"
+    },
+    {
+      "id": "js-string-trim",
+      "category": "JavaScript Methods",
+      "name": "String.trim()",
+      "description": "Returns a copy of the string with whitespace removed from both ends. Useful for cleaning up form input before validating it.",
+      "example": "\"  hello  \".trim(); // \"hello\""
+    },
+    {
+      "id": "js-string-touppercase",
+      "category": "JavaScript Methods",
+      "name": "String.toUpperCase()",
+      "description": "Returns a new string with every letter converted to capitals. The original string stays the same.",
+      "example": "\"quiet\".toUpperCase(); // \"QUIET\""
+    },
+    {
+      "id": "js-json-parse",
+      "category": "JavaScript Methods",
+      "name": "JSON.parse()",
+      "description": "Converts a JSON text string into a live JavaScript value, usually an object or array. It throws an error if the text is not valid JSON.",
+      "example": "const user = JSON.parse('{\"name\":\"Ada\"}');"
+    },
+    {
+      "id": "js-json-stringify",
+      "category": "JavaScript Methods",
+      "name": "JSON.stringify()",
+      "description": "Turns a JavaScript value into a JSON string, which is handy for saving to storage or sending to a server.",
+      "example": "const text = JSON.stringify({ id: 7, done: false });"
+    },
+    {
+      "id": "js-document-queryselector",
+      "category": "JavaScript Methods",
+      "name": "document.querySelector()",
+      "description": "Finds the first element in the page that matches a CSS selector. It returns null when nothing matches, so check before using the result.",
+      "example": "const title = document.querySelector(\".page-title\");"
+    },
+    {
+      "id": "js-addeventlistener",
+      "category": "JavaScript Methods",
+      "name": "addEventListener()",
+      "description": "Registers a function to run whenever a given event happens on an element, such as a click or a keypress.",
+      "example": "button.addEventListener(\"click\", () => save());"
+    },
+    {
+      "id": "js-settimeout",
+      "category": "JavaScript Methods",
+      "name": "setTimeout()",
+      "description": "Schedules a function to run once after a delay measured in milliseconds. It returns an id you can pass to clearTimeout to cancel it.",
+      "example": "setTimeout(() => hideToast(), 3000);"
+    },
+    {
+      "id": "js-math-random",
+      "category": "JavaScript Methods",
+      "name": "Math.random()",
+      "description": "Produces a pseudo-random decimal from 0 up to, but not including, 1. Multiply and floor it to get whole numbers in a range.",
+      "example": "const roll = Math.floor(Math.random() * 6) + 1;"
+    },
+    {
+      "id": "js-number-parseint",
+      "category": "JavaScript Methods",
+      "name": "Number.parseInt()",
+      "description": "Reads a whole number from the start of a string, ignoring trailing text. Always pass 10 as the second argument to force base ten.",
+      "example": "Number.parseInt(\"42px\", 10); // 42"
+    },
+    {
+      "id": "py-print",
+      "category": "Python Built-ins",
+      "name": "print()",
+      "description": "Writes values to the screen, separating multiple arguments with spaces and ending with a newline by default.",
+      "example": "print(\"Order total:\", 49.99)"
+    },
+    {
+      "id": "py-len",
+      "category": "Python Built-ins",
+      "name": "len()",
+      "description": "Returns how many items something holds, whether it is a string, list, tuple, or dictionary.",
+      "example": "len([\"a\", \"b\", \"c\"])  # 3"
+    },
+    {
+      "id": "py-range",
+      "category": "Python Built-ins",
+      "name": "range()",
+      "description": "Generates a sequence of whole numbers, most often used to drive a for loop. The end value is not included.",
+      "example": "for i in range(1, 4):\n    print(i)  # 1 2 3"
+    },
+    {
+      "id": "py-input",
+      "category": "Python Built-ins",
+      "name": "input()",
+      "description": "Pauses the program and waits for the user to type a line of text. Whatever they enter always comes back as a string.",
+      "example": "name = input(\"What is your name? \")"
+    },
+    {
+      "id": "py-int",
+      "category": "Python Built-ins",
+      "name": "int()",
+      "description": "Converts a value such as a numeric string or a float into a whole number. Floats are truncated toward zero rather than rounded.",
+      "example": "int(\"2024\")  # 2024"
+    },
+    {
+      "id": "py-str",
+      "category": "Python Built-ins",
+      "name": "str()",
+      "description": "Converts any value into its text form. Useful when you need to glue numbers into messages.",
+      "example": "str(3.5)  # \"3.5\""
+    },
+    {
+      "id": "py-list",
+      "category": "Python Built-ins",
+      "name": "list()",
+      "description": "Creates a new list, or converts another iterable like a string or a range into one.",
+      "example": "list(\"abc\")  # [\"a\", \"b\", \"c\"]"
+    },
+    {
+      "id": "py-dict",
+      "category": "Python Built-ins",
+      "name": "dict()",
+      "description": "Creates a dictionary of key and value pairs. You can build one from keyword arguments or from a sequence of pairs.",
+      "example": "user = dict(name=\"Ada\", age=36)"
+    },
+    {
+      "id": "py-sum",
+      "category": "Python Built-ins",
+      "name": "sum()",
+      "description": "Adds up all the numbers in an iterable and returns the total.",
+      "example": "sum([5, 10, 15])  # 30"
+    },
+    {
+      "id": "py-sorted",
+      "category": "Python Built-ins",
+      "name": "sorted()",
+      "description": "Returns a new sorted list from any iterable, leaving the original untouched. A key function or reverse=True customizes the order.",
+      "example": "sorted([3, 1, 2])  # [1, 2, 3]"
+    },
+    {
+      "id": "py-enumerate",
+      "category": "Python Built-ins",
+      "name": "enumerate()",
+      "description": "Loops over an iterable while also counting, giving you each index and item together. Cleaner than managing a counter by hand.",
+      "example": "for i, item in enumerate([\"a\", \"b\"]):\n    print(i, item)"
+    },
+    {
+      "id": "py-open",
+      "category": "Python Built-ins",
+      "name": "open()",
+      "description": "Opens a file for reading or writing and returns a file object. Using it inside a with block closes the file automatically.",
+      "example": "with open(\"notes.txt\") as f:\n    text = f.read()"
+    },
+    {
+      "id": "sql-select",
+      "category": "SQL Commands",
+      "name": "SELECT",
+      "description": "Reads data out of a table. List the columns you want, or use * to fetch every column.",
+      "example": "SELECT name, price FROM products;"
+    },
+    {
+      "id": "sql-where",
+      "category": "SQL Commands",
+      "name": "WHERE",
+      "description": "Filters rows so a query only touches those matching a condition. It works with SELECT, UPDATE, and DELETE.",
+      "example": "SELECT * FROM orders WHERE status = 'paid';"
+    },
+    {
+      "id": "sql-order-by",
+      "category": "SQL Commands",
+      "name": "ORDER BY",
+      "description": "Sorts the rows a query returns by one or more columns. Add DESC to sort from highest to lowest.",
+      "example": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "id": "sql-insert-into",
+      "category": "SQL Commands",
+      "name": "INSERT INTO",
+      "description": "Adds a new row to a table. Name the columns, then supply a matching value for each one.",
+      "example": "INSERT INTO users (name, email)\nVALUES ('Ada', 'ada@example.com');"
+    },
+    {
+      "id": "sql-update",
+      "category": "SQL Commands",
+      "name": "UPDATE",
+      "description": "Changes values in existing rows. Always pair it with a WHERE clause, or every row in the table will be modified.",
+      "example": "UPDATE products SET price = 9.99 WHERE id = 3;"
+    },
+    {
+      "id": "sql-delete",
+      "category": "SQL Commands",
+      "name": "DELETE",
+      "description": "Removes rows from a table. Like UPDATE, it applies to every row unless a WHERE clause narrows it down.",
+      "example": "DELETE FROM sessions WHERE expired = true;"
+    },
+    {
+      "id": "sql-join",
+      "category": "SQL Commands",
+      "name": "JOIN",
+      "description": "Combines rows from two tables by matching values, usually a foreign key against a primary key. This lets one query pull related data together.",
+      "example": "SELECT o.id, u.name FROM orders o\nJOIN users u ON u.id = o.user_id;"
+    },
+    {
+      "id": "sql-group-by",
+      "category": "SQL Commands",
+      "name": "GROUP BY",
+      "description": "Collapses rows that share a value into groups so aggregate functions like COUNT and SUM can summarize each group.",
+      "example": "SELECT status, COUNT(*) FROM tickets GROUP BY status;"
+    },
+    {
+      "id": "sql-limit",
+      "category": "SQL Commands",
+      "name": "LIMIT",
+      "description": "Caps how many rows a query returns. Combine it with ORDER BY to fetch things like the newest twenty records.",
+      "example": "SELECT * FROM logs ORDER BY id DESC LIMIT 20;"
+    },
+    {
+      "id": "sql-create-table",
+      "category": "SQL Commands",
+      "name": "CREATE TABLE",
+      "description": "Defines a brand new table, naming each column along with its data type and any constraints.",
+      "example": "CREATE TABLE tags (\n  id INTEGER PRIMARY KEY, label TEXT);"
+    },
+    {
+      "id": "git-init",
+      "category": "Git Commands",
+      "name": "git init",
+      "description": "Turns the current folder into a new Git repository by creating a hidden .git directory. Run it once at the start of a project.",
+      "example": "git init"
+    },
+    {
+      "id": "git-clone",
+      "category": "Git Commands",
+      "name": "git clone",
+      "description": "Downloads a full copy of a remote repository, including its entire history, into a new local folder.",
+      "example": "git clone https://github.com/user/project.git"
+    },
+    {
+      "id": "git-add",
+      "category": "Git Commands",
+      "name": "git add",
+      "description": "Stages changes so they are included in the next commit. You can stage single files or everything at once with a dot.",
+      "example": "git add index.html styles.css"
+    },
+    {
+      "id": "git-commit",
+      "category": "Git Commands",
+      "name": "git commit",
+      "description": "Saves the staged changes as a snapshot in the repository history. The -m flag attaches a short message describing what changed.",
+      "example": "git commit -m \"Fix login redirect\""
+    },
+    {
+      "id": "git-status",
+      "category": "Git Commands",
+      "name": "git status",
+      "description": "Shows which files are modified, staged, or untracked right now. A quick sanity check before committing.",
+      "example": "git status"
+    },
+    {
+      "id": "git-log",
+      "category": "Git Commands",
+      "name": "git log",
+      "description": "Lists past commits, newest first, with their authors and messages. Flags like --oneline condense the output.",
+      "example": "git log --oneline -5"
+    },
+    {
+      "id": "git-branch",
+      "category": "Git Commands",
+      "name": "git branch",
+      "description": "Lists your branches, or creates a new one when you pass a name. Branches let you build features without touching main.",
+      "example": "git branch feature/checkout"
+    },
+    {
+      "id": "git-checkout",
+      "category": "Git Commands",
+      "name": "git checkout",
+      "description": "Switches your working folder to another branch or commit. With the -b flag it creates the branch and switches in one step.",
+      "example": "git checkout feature/checkout"
+    },
+    {
+      "id": "git-merge",
+      "category": "Git Commands",
+      "name": "git merge",
+      "description": "Brings the commits from another branch into the current one. Run it from the branch that should receive the changes.",
+      "example": "git checkout main\ngit merge feature/checkout"
+    },
+    {
+      "id": "git-push",
+      "category": "Git Commands",
+      "name": "git push",
+      "description": "Uploads your local commits to a remote repository so others can see them. Name the remote and the branch you are pushing.",
+      "example": "git push origin main"
+    }
+  ]
+}

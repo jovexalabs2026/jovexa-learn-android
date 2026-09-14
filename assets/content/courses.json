@@ -1,0 +1,2573 @@
+{
+  "categories": [
+    "Web Development",
+    "Programming Languages",
+    "Databases",
+    "Developer Tools",
+    "Mobile Development"
+  ],
+  "courses": [
+    {
+      "slug": "html",
+      "title": "HTML",
+      "icon": "🧱",
+      "category": "Web Development",
+      "level": "Beginner",
+      "estimatedHours": 4,
+      "tagline": "The structure of every web page",
+      "description": "Learn how web pages are built. HTML gives your content structure and meaning, and it is the first skill every web developer learns.",
+      "lessons": [
+        {
+          "slug": "introduction-to-html",
+          "title": "Introduction to HTML",
+          "objective": "Understand what HTML is and the role it plays in every website.",
+          "sections": [
+            {
+              "heading": "What HTML does",
+              "text": "HTML (HyperText Markup Language) describes the structure of a web page. It tells the browser what each piece of content is: a heading, a paragraph, a link, an image, a button. The browser reads your HTML from top to bottom and draws the page from it."
+            },
+            {
+              "heading": "A tiny example",
+              "text": "Here is one of the smallest useful pieces of HTML. The h1 element marks the main heading and the p element marks a paragraph.",
+              "code": "<h1>Hello from Jovexa Learn</h1>\n<p>This is my very first page.</p>",
+              "language": "html"
+            }
+          ],
+          "mistakes": [
+            "Thinking HTML is a programming language. It is a markup language: it describes structure, it does not run logic.",
+            "Trying to control colors and layout with HTML. That is the job of CSS, which you will learn next."
+          ],
+          "exercise": {
+            "question": "What is the main job of HTML in a web page?",
+            "options": [
+              "Styling colors and fonts",
+              "Describing the structure and meaning of content",
+              "Running calculations and logic",
+              "Storing data in a database"
+            ],
+            "answer": 1,
+            "explanation": "HTML marks up content so the browser knows what each part is. Styling is handled by CSS and logic by JavaScript."
+          }
+        },
+        {
+          "slug": "document-structure",
+          "title": "HTML Document Structure",
+          "objective": "Write a complete, valid HTML document from scratch.",
+          "sections": [
+            {
+              "heading": "The skeleton of a page",
+              "text": "Every HTML document follows the same skeleton: a doctype, an html element wrapping everything, a head for information about the page, and a body for everything visible.",
+              "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <title>My Page</title>\n  </head>\n  <body>\n    <h1>Welcome</h1>\n  </body>\n</html>",
+              "language": "html"
+            },
+            {
+              "heading": "head vs body",
+              "text": "The head holds metadata: the page title shown in the browser tab, the character encoding, and links to stylesheets. The body holds everything the visitor actually sees."
+            }
+          ],
+          "mistakes": [
+            "Forgetting the doctype. Without <!DOCTYPE html> browsers may render the page in an old compatibility mode.",
+            "Putting visible content inside the head. Only metadata belongs there."
+          ],
+          "exercise": {
+            "question": "Where does the visible content of a page belong?",
+            "options": [
+              "Inside <head>",
+              "Inside <body>",
+              "Inside <title>",
+              "Before <!DOCTYPE html>"
+            ],
+            "answer": 1,
+            "explanation": "Everything a visitor sees lives inside the body element."
+          }
+        },
+        {
+          "slug": "elements",
+          "title": "HTML Elements",
+          "objective": "Understand how elements are written and how they nest inside each other.",
+          "sections": [
+            {
+              "heading": "Opening tag, content, closing tag",
+              "text": "Most elements have three parts: an opening tag, content, and a closing tag. The tag name describes the meaning of the content between them.",
+              "code": "<p>This whole line is one paragraph element.</p>",
+              "language": "html"
+            },
+            {
+              "heading": "Nesting and empty elements",
+              "text": "Elements can contain other elements, which creates a tree the browser understands. A few elements, like br and img, are empty: they have no content and no closing tag.",
+              "code": "<p>You can <strong>nest elements</strong> inside others.</p>\n<img src=\"photo.jpg\" alt=\"A sample photo\" />",
+              "language": "html"
+            }
+          ],
+          "mistakes": [
+            "Overlapping tags like <b><i>text</b></i>. Always close inner elements before outer ones.",
+            "Forgetting closing tags, which can make the browser guess your structure incorrectly."
+          ],
+          "exercise": {
+            "question": "Which of these elements is an empty element with no closing tag?",
+            "options": [
+              "<p>",
+              "<strong>",
+              "<img>",
+              "<h1>"
+            ],
+            "answer": 2,
+            "explanation": "img is an empty element. It takes attributes but never wraps content."
+          }
+        },
+        {
+          "slug": "attributes",
+          "title": "HTML Attributes",
+          "objective": "Add extra information to elements using attributes.",
+          "sections": [
+            {
+              "heading": "What attributes are",
+              "text": "Attributes live inside the opening tag and give an element extra information, written as name=\"value\" pairs. Different elements support different attributes.",
+              "code": "<a href=\"https://jovexalabs.com\" target=\"_blank\">Visit Jovexa Labs</a>",
+              "language": "html"
+            },
+            {
+              "heading": "Attributes you will use constantly",
+              "text": "href sets where a link goes, src points to an image or script file, alt describes an image for accessibility, class and id label elements so CSS and JavaScript can find them.",
+              "code": "<img src=\"logo.png\" alt=\"Company logo\" class=\"brand\" id=\"main-logo\" />",
+              "language": "html"
+            }
+          ],
+          "mistakes": [
+            "Skipping quotes around attribute values. Always write href=\"page.html\", not href=page.html.",
+            "Leaving out the alt attribute on images, which hurts accessibility and SEO."
+          ],
+          "exercise": {
+            "question": "Which attribute tells a link where to navigate?",
+            "options": [
+              "src",
+              "alt",
+              "href",
+              "class"
+            ],
+            "answer": 2,
+            "explanation": "href (hypertext reference) holds the destination URL of a link."
+          }
+        },
+        {
+          "slug": "headings-and-paragraphs",
+          "title": "Headings and Paragraphs",
+          "objective": "Organize text content with the six heading levels and paragraphs.",
+          "sections": [
+            {
+              "heading": "Six levels of headings",
+              "text": "HTML has headings h1 through h6. h1 is the most important and should normally appear once per page. Use levels in order to create a logical outline, like chapters and subchapters in a book.",
+              "code": "<h1>Cooking Guide</h1>\n<h2>Breakfast</h2>\n<h3>Pancakes</h3>\n<p>Mix, pour, flip, enjoy.</p>",
+              "language": "html"
+            },
+            {
+              "heading": "Paragraphs",
+              "text": "The p element wraps a block of text. Browsers automatically add spacing between paragraphs, so you never need empty paragraphs or repeated line breaks for spacing."
+            }
+          ],
+          "mistakes": [
+            "Choosing a heading level because of its size instead of its meaning. Size is controlled with CSS.",
+            "Using <br> repeatedly to create space between blocks. Use separate paragraphs and CSS margins instead."
+          ],
+          "exercise": {
+            "question": "How many times should h1 normally appear on a page?",
+            "options": [
+              "As many as you like",
+              "Exactly once",
+              "Twice",
+              "Never"
+            ],
+            "answer": 1,
+            "explanation": "One h1 per page keeps the document outline clear for readers, screen readers, and search engines."
+          }
+        },
+        {
+          "slug": "links",
+          "title": "Links",
+          "objective": "Connect pages together with anchors and understand absolute vs relative URLs.",
+          "sections": [
+            {
+              "heading": "The anchor element",
+              "text": "Links are created with the a element. The text between the tags is what the visitor clicks, and href is where they go. An absolute URL includes the full address; a relative URL points to a file within your own site.",
+              "code": "<a href=\"https://jovexalabs.com\">Absolute: another site</a>\n<a href=\"/learn\">Relative: a page on this site</a>\n<a href=\"#top\">Jump to an element with id=\"top\"</a>",
+              "language": "html"
+            },
+            {
+              "heading": "Opening in a new tab",
+              "text": "Adding target=\"_blank\" opens the link in a new tab. When you do, also add rel=\"noopener\" so the new page cannot control the page that opened it.",
+              "code": "<a href=\"https://github.com/jovexalabs2026\" target=\"_blank\" rel=\"noopener\">Our GitHub</a>",
+              "language": "html"
+            }
+          ],
+          "mistakes": [
+            "Writing vague link text like \"click here\". Descriptive text helps everyone, especially screen reader users.",
+            "Using target=\"_blank\" without rel=\"noopener\"."
+          ],
+          "exercise": {
+            "question": "Which href value links to another page inside your own site?",
+            "options": [
+              "href=\"https://example.com/page\"",
+              "href=\"/about\"",
+              "href=\"mailto:hi@example.com\"",
+              "href=\"tel:+123456789\""
+            ],
+            "answer": 1,
+            "explanation": "A path starting with / is a relative URL that stays on the current site."
+          }
+        },
+        {
+          "slug": "images",
+          "title": "Images",
+          "objective": "Embed images correctly with src, alt, and size attributes.",
+          "sections": [
+            {
+              "heading": "The img element",
+              "text": "img displays a picture. src points to the image file and alt describes it in words. The alt text appears if the image fails to load and is read aloud by screen readers.",
+              "code": "<img src=\"team.jpg\" alt=\"The Jovexa Labs team at a table\" width=\"640\" height=\"360\" />",
+              "language": "html"
+            },
+            {
+              "heading": "Why width and height matter",
+              "text": "Giving the browser the image dimensions lets it reserve space before the file downloads, so the page does not jump around while loading."
+            }
+          ],
+          "mistakes": [
+            "Leaving alt empty on meaningful images. Use alt=\"\" only for purely decorative images.",
+            "Embedding huge image files. Resize and compress images before putting them on a page."
+          ],
+          "exercise": {
+            "question": "What does the alt attribute do?",
+            "options": [
+              "Sets an alternate image if the first is slow",
+              "Describes the image in words for accessibility and fallback",
+              "Adds a caption below the image",
+              "Makes the image load faster"
+            ],
+            "answer": 1,
+            "explanation": "alt is the text alternative: shown when the image cannot load and read by screen readers."
+          }
+        },
+        {
+          "slug": "lists",
+          "title": "Lists",
+          "objective": "Present items with unordered, ordered, and nested lists.",
+          "sections": [
+            {
+              "heading": "Unordered and ordered lists",
+              "text": "Use ul when order does not matter (bullet points) and ol when it does (steps, rankings). Every item inside either list is an li element.",
+              "code": "<ul>\n  <li>Milk</li>\n  <li>Eggs</li>\n</ul>\n<ol>\n  <li>Preheat the oven</li>\n  <li>Mix the batter</li>\n  <li>Bake for 20 minutes</li>\n</ol>",
+              "language": "html"
+            },
+            {
+              "heading": "Nesting lists",
+              "text": "A list can contain another list. Put the inner ul or ol inside an li of the outer list, not directly inside the outer list.",
+              "code": "<ul>\n  <li>Frontend\n    <ul>\n      <li>HTML</li>\n      <li>CSS</li>\n    </ul>\n  </li>\n</ul>",
+              "language": "html"
+            }
+          ],
+          "mistakes": [
+            "Placing text or other elements directly inside ul or ol. Only li elements belong there.",
+            "Using lists just for indentation. Use CSS margins for spacing."
+          ],
+          "exercise": {
+            "question": "Which element should you use for step-by-step instructions?",
+            "options": [
+              "<ul>",
+              "<ol>",
+              "<dl>",
+              "<div>"
+            ],
+            "answer": 1,
+            "explanation": "ol is an ordered list, ideal when the sequence of items matters."
+          }
+        },
+        {
+          "slug": "tables",
+          "title": "Tables",
+          "objective": "Display rows and columns of data with table, tr, th, and td.",
+          "sections": [
+            {
+              "heading": "Table building blocks",
+              "text": "A table is built from rows (tr). Header cells use th and data cells use td. Wrapping the header row in thead and the data rows in tbody keeps the structure clear.",
+              "code": "<table>\n  <thead>\n    <tr><th>Course</th><th>Lessons</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>HTML</td><td>10</td></tr>\n    <tr><td>CSS</td><td>10</td></tr>\n  </tbody>\n</table>",
+              "language": "html"
+            },
+            {
+              "heading": "When to use a table",
+              "text": "Tables are for tabular data: schedules, prices, statistics. Do not use tables to lay out a page; CSS flexbox and grid do that job far better."
+            }
+          ],
+          "mistakes": [
+            "Using tables for page layout. That approach died with old browsers.",
+            "Skipping th cells. Header cells give the table meaning for screen readers."
+          ],
+          "exercise": {
+            "question": "Which element marks a header cell in a table?",
+            "options": [
+              "<td>",
+              "<tr>",
+              "<th>",
+              "<thead>"
+            ],
+            "answer": 2,
+            "explanation": "th is a header cell. thead groups header rows, tr is a row, td is a data cell."
+          }
+        },
+        {
+          "slug": "forms",
+          "title": "Forms",
+          "objective": "Collect user input with form, input, label, and button.",
+          "sections": [
+            {
+              "heading": "A basic form",
+              "text": "Forms gather input from visitors. Each input should have a label connected by matching for and id values, so clicking the label focuses the field and screen readers announce it correctly.",
+              "code": "<form>\n  <label for=\"email\">Email</label>\n  <input type=\"email\" id=\"email\" name=\"email\" required />\n\n  <label for=\"msg\">Message</label>\n  <textarea id=\"msg\" name=\"msg\"></textarea>\n\n  <button type=\"submit\">Send</button>\n</form>",
+              "language": "html"
+            },
+            {
+              "heading": "Input types",
+              "text": "The type attribute changes both behavior and validation: text, email, password, number, checkbox, radio, date, and more. Picking the right type gives mobile users the right keyboard automatically."
+            }
+          ],
+          "mistakes": [
+            "Inputs without labels. Placeholder text is not a substitute for a real label.",
+            "Using type=\"text\" for everything and losing free validation and better mobile keyboards."
+          ],
+          "exercise": {
+            "question": "How do you connect a label to its input?",
+            "options": [
+              "Give both the same class",
+              "Put the input id in the label for attribute",
+              "Wrap the input in a div",
+              "They connect automatically"
+            ],
+            "answer": 1,
+            "explanation": "label for=\"email\" pairs with input id=\"email\". Wrapping the input inside the label also works."
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What does HTML stand for?",
+          "options": [
+            "HyperText Markup Language",
+            "HighTech Modern Language",
+            "HyperTransfer Markup Logic",
+            "Home Tool Markup Language"
+          ],
+          "answer": 0,
+          "explanation": "HTML is HyperText Markup Language, the standard markup language of the web."
+        },
+        {
+          "question": "Which element contains everything visible on the page?",
+          "options": [
+            "<head>",
+            "<html>",
+            "<body>",
+            "<main>"
+          ],
+          "answer": 2,
+          "explanation": "The body element wraps all visible content. head holds metadata only."
+        },
+        {
+          "question": "Which is a correctly written link?",
+          "options": [
+            "<a url=\"page.html\">Go</a>",
+            "<a href=\"page.html\">Go</a>",
+            "<link href=\"page.html\">Go</link>",
+            "<a src=\"page.html\">Go</a>"
+          ],
+          "answer": 1,
+          "explanation": "Links use the a element with an href attribute."
+        },
+        {
+          "question": "Which attribute provides a text alternative for images?",
+          "options": [
+            "title",
+            "src",
+            "alt",
+            "aria"
+          ],
+          "answer": 2,
+          "explanation": "alt text describes the image when it cannot be seen or loaded."
+        },
+        {
+          "question": "Which element belongs directly inside a <ul>?",
+          "options": [
+            "<p>",
+            "<li>",
+            "<td>",
+            "<span>"
+          ],
+          "answer": 1,
+          "explanation": "Only li elements belong directly inside ul or ol."
+        },
+        {
+          "question": "What is the purpose of the label element in forms?",
+          "options": [
+            "It styles the input",
+            "It names an input for users and assistive technology",
+            "It validates the input value",
+            "It submits the form"
+          ],
+          "answer": 1,
+          "explanation": "Labels describe inputs, improve accessibility, and enlarge the clickable area."
+        }
+      ]
+    },
+    {
+      "slug": "css",
+      "title": "CSS",
+      "icon": "🎨",
+      "category": "Web Development",
+      "level": "Beginner",
+      "estimatedHours": 5,
+      "tagline": "Make the web look the way you imagine",
+      "description": "Learn how to style web pages with CSS. You will control colors, fonts, spacing, and layout, and finish by building your own responsive landing page.",
+      "lessons": [
+        {
+          "slug": "introduction-to-css",
+          "title": "Introduction to CSS",
+          "objective": "Understand what CSS is and how a style rule is written.",
+          "sections": [
+            {
+              "heading": "What CSS does",
+              "text": "CSS (Cascading Style Sheets) controls how HTML looks: colors, fonts, spacing, and layout. A rule has two parts: a selector that picks elements, and declarations inside curly braces written as property: value pairs.",
+              "code": "h1 {\n  color: navy;\n  font-size: 2rem;\n}",
+              "language": "css"
+            },
+            {
+              "heading": "Three ways to attach styles",
+              "text": "You can write CSS inline on an element, inside a style element in the head, or in a separate .css file linked from the page. The external file is the best habit: one stylesheet can style every page of a site.",
+              "code": "<link rel=\"stylesheet\" href=\"styles.css\" />",
+              "language": "html"
+            }
+          ],
+          "mistakes": [
+            "Writing inline styles on every element. They are hard to maintain and override; keep your CSS in an external file.",
+            "Forgetting the semicolon between declarations, which silently breaks every declaration that follows it."
+          ],
+          "exercise": {
+            "question": "In a CSS rule, which part chooses the elements that get styled?",
+            "options": [
+              "The declaration",
+              "The selector",
+              "The property",
+              "The value"
+            ],
+            "answer": 1,
+            "explanation": "The selector picks the elements. The declarations inside the braces describe what to change."
+          }
+        },
+        {
+          "slug": "selectors",
+          "title": "Selectors",
+          "objective": "Target elements precisely with type, class, id, and combined selectors.",
+          "sections": [
+            {
+              "heading": "Type, class, and id",
+              "text": "A type selector uses the tag name and styles every element of that kind. A class selector starts with a dot and matches any element carrying that class. An id selector starts with a hash and matches the single element with that id.",
+              "code": "p { line-height: 1.6; }\n.card { padding: 16px; }\n#hero { text-align: center; }",
+              "language": "css"
+            },
+            {
+              "heading": "Combining and grouping",
+              "text": "A space between selectors matches elements nested inside another. A comma groups several selectors under one rule. Pseudo-classes like :hover style an element in a specific state.",
+              "code": ".nav a { text-decoration: none; }\nh1, h2 { font-family: Georgia, serif; }\nbutton:hover { background: #1f2937; }",
+              "language": "css"
+            }
+          ],
+          "mistakes": [
+            "Mixing up .name and #name. The dot selects a class, the hash selects an id.",
+            "Overusing id selectors. Their high specificity makes styles painful to override later."
+          ],
+          "exercise": {
+            "question": "Which selector matches every element with class=\"card\"?",
+            "options": [
+              "#card",
+              "card",
+              ".card",
+              "*card"
+            ],
+            "answer": 2,
+            "explanation": "Class selectors start with a dot, so .card matches all elements with that class."
+          }
+        },
+        {
+          "slug": "colors",
+          "title": "Colors",
+          "objective": "Apply colors with names, hex codes, rgb, and hsl values.",
+          "sections": [
+            {
+              "heading": "Four ways to write a color",
+              "text": "CSS accepts named colors like teal, hex codes like #333333, rgb() with red, green, and blue channels, and hsl() with hue, saturation, and lightness. They all describe the same colors; pick the format your team reads most easily.",
+              "code": "h1 { color: teal; }\np { color: #333333; }\n.banner { background-color: rgb(255, 200, 0); }\n.badge { background-color: hsl(210, 80%, 50%); }",
+              "language": "css"
+            },
+            {
+              "heading": "Transparency and contrast",
+              "text": "Adding a fourth value to rgba() or hsla() sets opacity from 0 (invisible) to 1 (solid). Whatever colors you choose, keep strong contrast between text and its background so the page stays readable.",
+              "code": ".overlay {\n  background-color: rgba(0, 0, 0, 0.5);\n  color: hsla(0, 0%, 100%, 0.9);\n}",
+              "language": "css"
+            }
+          ],
+          "mistakes": [
+            "Typing hex codes with the wrong number of digits. Valid hex colors have 3, 4, 6, or 8 digits after the hash.",
+            "Relying on color alone to signal meaning, like red text for errors. Pair color with words or icons."
+          ],
+          "exercise": {
+            "question": "Which value gives a half-transparent black background?",
+            "options": [
+              "rgb(0, 0, 0)",
+              "rgba(0, 0, 0, 0.5)",
+              "#000",
+              "black 50%"
+            ],
+            "answer": 1,
+            "explanation": "rgba() adds an alpha channel, and 0.5 means 50 percent opacity."
+          }
+        },
+        {
+          "slug": "typography",
+          "title": "Typography",
+          "objective": "Style text with font families, sizes, weights, and comfortable line spacing.",
+          "sections": [
+            {
+              "heading": "Font families and fallbacks",
+              "text": "font-family takes a list of fonts. The browser tries each one in order and uses the first it has, so always end with a generic family like sans-serif or serif as a safety net.",
+              "code": "body {\n  font-family: \"Segoe UI\", Arial, sans-serif;\n}",
+              "language": "css"
+            },
+            {
+              "heading": "Size, weight, and line height",
+              "text": "Set sizes in rem so text scales with the visitor browser settings. font-weight ranges from thin to bold, and a unitless line-height around 1.5 to 1.7 gives paragraphs comfortable breathing room.",
+              "code": "p {\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.6;\n}\nh1 {\n  font-size: 2.5rem;\n  font-weight: 700;\n}",
+              "language": "css"
+            }
+          ],
+          "mistakes": [
+            "Setting every font size in px. rem units respect user preferences and make scaling the whole page easy.",
+            "Leaving out the generic fallback at the end of a font-family list."
+          ],
+          "exercise": {
+            "question": "Which line-height is most comfortable for body text?",
+            "options": [
+              "0.8",
+              "1",
+              "1.6",
+              "3.5"
+            ],
+            "answer": 2,
+            "explanation": "Values around 1.5 to 1.7 keep lines readable: tighter feels cramped, looser feels disconnected."
+          }
+        },
+        {
+          "slug": "box-model",
+          "title": "Box Model",
+          "objective": "Explain how content, padding, border, and margin combine into the size of an element.",
+          "sections": [
+            {
+              "heading": "Four layers of every box",
+              "text": "Every element is a rectangular box with four layers: the content, padding around the content, a border around the padding, and margin outside the border. Padding is space inside the box; margin is space between boxes.",
+              "code": ".card {\n  width: 300px;\n  padding: 16px;\n  border: 2px solid #cccccc;\n  margin: 24px;\n}",
+              "language": "css"
+            },
+            {
+              "heading": "box-sizing: border-box",
+              "text": "By default, width sets only the content area, so padding and border make the box bigger than the number you wrote. Setting box-sizing to border-box makes width include padding and border, which is far easier to reason about. Most projects apply it to every element.",
+              "code": "* {\n  box-sizing: border-box;\n}",
+              "language": "css"
+            }
+          ],
+          "mistakes": [
+            "Expecting width: 300px to be the final rendered size. In the default model, padding and border are added on top.",
+            "Using padding to push boxes apart. Padding lives inside the border; use margin for space between elements."
+          ],
+          "exercise": {
+            "question": "Which property adds space outside the border of an element?",
+            "options": [
+              "padding",
+              "margin",
+              "gap",
+              "outline-offset"
+            ],
+            "answer": 1,
+            "explanation": "Margin is the outermost layer of the box model and separates an element from its neighbors."
+          }
+        },
+        {
+          "slug": "display",
+          "title": "Display",
+          "objective": "Control how elements flow on the page with block, inline, inline-block, and none.",
+          "sections": [
+            {
+              "heading": "Block, inline, and inline-block",
+              "text": "Block elements start on a new line and stretch across the available width. Inline elements flow inside text and ignore width and height. inline-block is the mix: it flows in a line but accepts width, height, and vertical padding.",
+              "code": "div { display: block; }\nspan { display: inline; }\n.button {\n  display: inline-block;\n  padding: 8px 16px;\n}",
+              "language": "css"
+            },
+            {
+              "heading": "Hiding elements",
+              "text": "display: none removes an element from the layout completely, as if it were deleted. visibility: hidden makes it invisible but keeps its empty space in place. Choose based on whether the gap should remain.",
+              "code": ".menu-closed { display: none; }\n.reserved-slot { visibility: hidden; }",
+              "language": "css"
+            }
+          ],
+          "mistakes": [
+            "Setting width or height on an inline element and wondering why nothing changes. Switch it to inline-block or block first.",
+            "Treating display: none and visibility: hidden as the same. The first removes the space, the second keeps it."
+          ],
+          "exercise": {
+            "question": "Which declaration removes an element and the space it occupied?",
+            "options": [
+              "visibility: hidden",
+              "display: none",
+              "opacity: 0",
+              "display: hidden"
+            ],
+            "answer": 1,
+            "explanation": "display: none takes the element out of the layout. The other real options leave the space behind, and display: hidden does not exist."
+          }
+        },
+        {
+          "slug": "flexbox",
+          "title": "Flexbox",
+          "objective": "Arrange items in a row or column and align them with flexbox.",
+          "sections": [
+            {
+              "heading": "Container and items",
+              "text": "Flexbox starts by setting display: flex on a parent, which turns its children into flex items laid out in a row by default. justify-content spaces items along the row, align-items aligns them across it, and gap adds space between them.",
+              "code": ".toolbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 12px;\n}",
+              "language": "css"
+            },
+            {
+              "heading": "Wrapping and growing",
+              "text": "flex-wrap: wrap lets items drop to a new line when the row runs out of room. The flex shorthand on an item controls how it grows and shrinks: flex: 1 1 250px means grow, shrink, and start near 250px wide.",
+              "code": ".cards {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n}\n.cards article {\n  flex: 1 1 250px;\n}",
+              "language": "css"
+            }
+          ],
+          "mistakes": [
+            "Writing justify-content on the items instead of the container. Alignment properties belong on the flex parent.",
+            "Forgetting flex-wrap: wrap, so items squeeze onto one line and overflow on small screens."
+          ],
+          "exercise": {
+            "question": "Where do you write display: flex?",
+            "options": [
+              "On every item you want to move",
+              "On the parent container of the items",
+              "On the body element only",
+              "On the html element"
+            ],
+            "answer": 1,
+            "explanation": "The parent becomes the flex container and its direct children become flex items automatically."
+          }
+        },
+        {
+          "slug": "grid",
+          "title": "Grid",
+          "objective": "Build two-dimensional layouts with grid columns, rows, and gaps.",
+          "sections": [
+            {
+              "heading": "Defining a grid",
+              "text": "display: grid turns a container into a grid, and grid-template-columns defines the columns. The fr unit shares free space: repeat(3, 1fr) creates three equal columns, and gap spaces both rows and columns in one property.",
+              "code": ".gallery {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}",
+              "language": "css"
+            },
+            {
+              "heading": "Placing items across tracks",
+              "text": "Items fill grid cells in order, but you can place one deliberately. grid-column: 1 / 3 stretches an item from the first line to the third, so it spans two columns. This is how featured cards and banners get extra room.",
+              "code": ".featured {\n  grid-column: 1 / 3;\n  grid-row: 1;\n}",
+              "language": "css"
+            }
+          ],
+          "mistakes": [
+            "Reaching for grid when the layout is a single row or column. Flexbox is simpler for one direction.",
+            "Adding margins between grid items by hand instead of using the gap property."
+          ],
+          "exercise": {
+            "question": "In grid-template-columns, what does 1fr mean?",
+            "options": [
+              "One fixed pixel",
+              "One fraction of the free space",
+              "One percent of the page width",
+              "The first row of the grid"
+            ],
+            "answer": 1,
+            "explanation": "fr is a fraction unit: the free space is divided among columns in proportion to their fr values."
+          }
+        },
+        {
+          "slug": "responsive-design",
+          "title": "Responsive Design",
+          "objective": "Adapt one layout to phones, tablets, and desktops with fluid units and media queries.",
+          "sections": [
+            {
+              "heading": "Fluid foundations",
+              "text": "Responsive design starts with the viewport meta tag, which tells phones to render at their real width instead of pretending to be a desktop. From there, prefer fluid units like percentages and rem, and cap images with max-width: 100% so they never overflow.",
+              "code": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />",
+              "language": "html"
+            },
+            {
+              "heading": "Media queries",
+              "text": "A media query applies extra rules only when a condition matches, usually a minimum screen width. Build the small stacked layout first, then add breakpoints that rearrange things as space grows. This mobile-first approach keeps the base CSS simple.",
+              "code": ".layout {\n  display: grid;\n  grid-template-columns: 1fr;\n}\n@media (min-width: 768px) {\n  .layout {\n    grid-template-columns: 1fr 1fr;\n  }\n}",
+              "language": "css"
+            }
+          ],
+          "mistakes": [
+            "Skipping the viewport meta tag, so phones zoom out and show a tiny desktop layout.",
+            "Designing for desktop first and patching phones later. Start small, then add wider breakpoints."
+          ],
+          "exercise": {
+            "question": "When do the rules inside @media (min-width: 768px) apply?",
+            "options": [
+              "Only on screens narrower than 768px",
+              "On screens 768px wide and wider",
+              "Only on screens exactly 768px wide",
+              "Only when printing the page"
+            ],
+            "answer": 1,
+            "explanation": "min-width means \"at least this wide\", so the rules apply from 768px upward."
+          }
+        },
+        {
+          "slug": "mini-project-responsive-landing-page",
+          "title": "Mini Project: Responsive Landing Page",
+          "objective": "Combine selectors, the box model, flexbox, and media queries into one responsive landing page.",
+          "sections": [
+            {
+              "heading": "What to build",
+              "text": "Build a one-page site for an imaginary app with four parts: a header with a logo and navigation links, a hero section with a headline, a short pitch, and a call-to-action button, a row of three feature cards, and a simple footer. On phones the cards must stack in a single column; from 768px up they sit side by side. Choose your own color palette and font stack, and give sections padding so nothing touches the screen edges."
+            },
+            {
+              "heading": "Starter markup",
+              "text": "Copy this HTML into a fresh page, link a stylesheet, and write all the CSS yourself: flexbox for the header and cards, box model spacing throughout, and one media query for the wide layout.",
+              "code": "<header class=\"site-header\">\n  <span class=\"logo\">Nimbus</span>\n  <nav>\n    <a href=\"#features\">Features</a>\n    <a href=\"#contact\">Contact</a>\n  </nav>\n</header>\n<section class=\"hero\">\n  <h1>Plan your day in seconds</h1>\n  <p>Nimbus keeps your tasks light, fast, and in one place.</p>\n  <a class=\"cta\" href=\"#features\">Get started</a>\n</section>\n<section id=\"features\" class=\"cards\">\n  <article>Fast capture</article>\n  <article>Smart reminders</article>\n  <article>Works offline</article>\n</section>\n<footer id=\"contact\">Made with care by you</footer>",
+              "language": "html"
+            }
+          ],
+          "mistakes": [
+            "Styling the desktop version first. Build the stacked mobile layout, then add one media query for wider screens.",
+            "Hard-coding pixel widths on the cards. Let flexbox or grid share the space so the page stays fluid."
+          ],
+          "exercise": {
+            "question": "The three feature cards must stack on phones and sit in a row on wide screens. What is the cleanest approach?",
+            "options": [
+              "Floats with clearing hacks",
+              "Flexbox or grid plus one media query",
+              "An HTML table with fixed cell widths",
+              "Absolute positioning for each card"
+            ],
+            "answer": 1,
+            "explanation": "A flex or grid container switches from one column to a row inside a single media query, with no hacks."
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What does CSS stand for?",
+          "options": [
+            "Creative Style System",
+            "Cascading Style Sheets",
+            "Computer Styled Sections",
+            "Colorful Sheet Syntax"
+          ],
+          "answer": 1,
+          "explanation": "CSS is Cascading Style Sheets, the language that styles web pages."
+        },
+        {
+          "question": "Which selector styles the single element with id=\"hero\"?",
+          "options": [
+            ".hero",
+            "#hero",
+            "hero",
+            "*hero"
+          ],
+          "answer": 1,
+          "explanation": "Id selectors start with a hash. The dot version would match a class instead."
+        },
+        {
+          "question": "Which property creates space between the content and the border of a box?",
+          "options": [
+            "margin",
+            "padding",
+            "gap",
+            "border-spacing"
+          ],
+          "answer": 1,
+          "explanation": "Padding sits inside the border, around the content. Margin is outside the border."
+        },
+        {
+          "question": "Which declaration turns an element into a flex container?",
+          "options": [
+            "display: flex",
+            "flex: on",
+            "layout: flex",
+            "position: flex"
+          ],
+          "answer": 0,
+          "explanation": "display: flex on a parent makes its direct children flex items."
+        },
+        {
+          "question": "In grid, which property defines the number and size of the columns?",
+          "options": [
+            "grid-gap",
+            "grid-template-columns",
+            "column-count",
+            "grid-area"
+          ],
+          "answer": 1,
+          "explanation": "grid-template-columns lists the column tracks, for example repeat(3, 1fr)."
+        },
+        {
+          "question": "What is a media query used for?",
+          "options": [
+            "Loading images faster",
+            "Applying styles only when conditions like screen width match",
+            "Querying a database for style values",
+            "Embedding audio and video on a page"
+          ],
+          "answer": 1,
+          "explanation": "Media queries switch styles on or off based on conditions such as viewport width, which powers responsive design."
+        }
+      ]
+    },
+    {
+      "slug": "javascript",
+      "title": "JavaScript",
+      "icon": "⚡",
+      "category": "Web Development",
+      "level": "Beginner",
+      "estimatedHours": 6,
+      "tagline": "Make your web pages think and react",
+      "description": "Learn the language that powers interactivity on the web. JavaScript lets you respond to clicks, work with data, and update the page without reloading it.",
+      "lessons": [
+        {
+          "slug": "introduction-to-javascript",
+          "title": "Introduction to JavaScript",
+          "objective": "Understand what JavaScript is and where it runs in a web page.",
+          "sections": [
+            {
+              "heading": "The language of behavior",
+              "text": "HTML gives a page structure and CSS gives it style, but JavaScript gives it behavior. It is a full programming language that runs inside the browser, so it can react to clicks, check form input, fetch data, and change the page while the visitor is looking at it."
+            },
+            {
+              "heading": "Your first line of code",
+              "text": "The quickest way to see JavaScript work is console.log, which prints a message to the browser console. Open the developer tools in any browser, find the Console tab, and try it.",
+              "code": "console.log(\"Hello from Jovexa Learn\");\nconsole.log(2 + 3); // prints 5",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Confusing JavaScript with Java. They are unrelated languages that happen to share part of a name.",
+            "Skipping the browser console while learning. It is the fastest place to test small pieces of code and see errors."
+          ],
+          "exercise": {
+            "question": "What role does JavaScript play in a web page?",
+            "options": [
+              "It defines the structure of the content",
+              "It controls colors, fonts, and layout",
+              "It adds behavior and interactivity",
+              "It stores files on the server"
+            ],
+            "answer": 2,
+            "explanation": "JavaScript handles behavior: reacting to user actions and updating the page. Structure is HTML and styling is CSS."
+          }
+        },
+        {
+          "slug": "variables",
+          "title": "Variables",
+          "objective": "Store and update values using const and let.",
+          "sections": [
+            {
+              "heading": "const and let",
+              "text": "A variable is a named box that holds a value. Use const when the value should never be reassigned and let when it needs to change later. Modern code prefers const by default and switches to let only when reassignment is truly needed.",
+              "code": "const siteName = \"Jovexa Learn\";\nlet score = 0;\nscore = score + 10;\nconsole.log(siteName, score); // \"Jovexa Learn\" 10",
+              "language": "javascript"
+            },
+            {
+              "heading": "Naming rules",
+              "text": "Variable names are case sensitive, cannot start with a number, and cannot contain spaces. The common style is camelCase: start lowercase and capitalize each new word, like totalPrice or userEmail."
+            }
+          ],
+          "mistakes": [
+            "Trying to reassign a const. If a value must change, declare it with let instead.",
+            "Using var out of habit from old tutorials. var has confusing scoping rules, so stick to const and let."
+          ],
+          "exercise": {
+            "question": "Which declaration is best for a value that never gets reassigned?",
+            "options": [
+              "var",
+              "let",
+              "const",
+              "static"
+            ],
+            "answer": 2,
+            "explanation": "const signals that the variable will not be reassigned, which makes code easier to reason about."
+          }
+        },
+        {
+          "slug": "data-types",
+          "title": "Data Types",
+          "objective": "Recognize the basic types of values JavaScript works with.",
+          "sections": [
+            {
+              "heading": "The everyday types",
+              "text": "The values you will use most are strings (text in quotes), numbers, and booleans (true or false). Two special values mean \"nothing\": undefined is a variable that was never given a value, and null is an intentional empty value you set yourself.",
+              "code": "const course = \"JavaScript\"; // string\nconst lessons = 12; // number\nconst isFree = true; // boolean\nlet nickname; // undefined\nconst winner = null; // intentionally empty",
+              "language": "javascript"
+            },
+            {
+              "heading": "Checking a type",
+              "text": "The typeof operator tells you what type a value is, which is handy when debugging. Strings can also be written with backticks as template literals, which let you insert values with the dollar-brace syntax.",
+              "code": "console.log(typeof \"hi\"); // \"string\"\nconsole.log(typeof 42); // \"number\"\nconst name = \"Ava\";\nconsole.log(`Welcome, ${name}!`); // \"Welcome, Ava!\"",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Forgetting that \"5\" and 5 are different: one is a string and one is a number, and adding them gives \"55\".",
+            "Mixing up null and undefined. undefined means a value was never set, null means you set it to empty on purpose."
+          ],
+          "exercise": {
+            "question": "What is the result of typeof true?",
+            "options": [
+              "\"true\"",
+              "\"boolean\"",
+              "\"number\"",
+              "\"string\""
+            ],
+            "answer": 1,
+            "explanation": "true is a boolean value, so typeof returns the string \"boolean\"."
+          }
+        },
+        {
+          "slug": "operators",
+          "title": "Operators",
+          "objective": "Combine and compare values with arithmetic, comparison, and logical operators.",
+          "sections": [
+            {
+              "heading": "Arithmetic and comparison",
+              "text": "Arithmetic operators (+, -, *, /, %) do math. Comparison operators produce booleans: always use === for equals and !== for not equals, because they check both value and type without surprise conversions.",
+              "code": "const price = 20;\nconst tax = price * 0.1;\nconsole.log(price + tax); // 22\nconsole.log(price === 20); // true\nconsole.log(price !== \"20\"); // true, different types",
+              "language": "javascript"
+            },
+            {
+              "heading": "Logical operators",
+              "text": "Logical operators combine booleans: && means both sides must be true, || means at least one side must be true, and ! flips a value. They power the conditions you will write in the next lesson.",
+              "code": "const loggedIn = true;\nconst isAdmin = false;\nconsole.log(loggedIn && isAdmin); // false\nconsole.log(loggedIn || isAdmin); // true\nconsole.log(!loggedIn); // false",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Using == instead of ===. Double equals converts types silently, so \"5\" == 5 is true and hides bugs.",
+            "Writing = when you meant ===. A single equals sign assigns a value instead of comparing."
+          ],
+          "exercise": {
+            "question": "Why is === preferred over == in JavaScript?",
+            "options": [
+              "It runs faster in every browser",
+              "It compares value and type without converting anything",
+              "It works on strings only",
+              "It can compare more than two values"
+            ],
+            "answer": 1,
+            "explanation": "Strict equality (===) never converts types, so comparisons behave predictably. == can convert types and surprise you."
+          }
+        },
+        {
+          "slug": "conditions",
+          "title": "Conditions",
+          "objective": "Make code choose between paths with if, else if, and else.",
+          "sections": [
+            {
+              "heading": "if, else if, else",
+              "text": "An if statement runs its block only when the condition in parentheses is true. Chain else if for extra checks and end with else as the fallback. JavaScript tests the conditions from top to bottom and runs the first block that matches.",
+              "code": "const age = 17;\nif (age >= 18) {\n  console.log(\"You can vote\");\n} else if (age >= 16) {\n  console.log(\"Almost there\");\n} else {\n  console.log(\"Not yet\");\n}",
+              "language": "javascript"
+            },
+            {
+              "heading": "Truthy and falsy",
+              "text": "Conditions do not have to be strict booleans. Values like 0, an empty string, null, and undefined count as falsy, while most other values count as truthy. This lets you write checks like if (username) to test that a string is not empty."
+            }
+          ],
+          "mistakes": [
+            "Putting a semicolon right after the condition, like if (x > 5); which ends the statement and always runs the block.",
+            "Repeating full comparisons when a simple truthy check works, or the reverse: relying on truthiness when 0 is a valid value."
+          ],
+          "exercise": {
+            "question": "In an if / else if / else chain, which block runs?",
+            "options": [
+              "Every block whose condition is true",
+              "Only the first block whose condition is true",
+              "Always the else block",
+              "The last block whose condition is true"
+            ],
+            "answer": 1,
+            "explanation": "JavaScript checks conditions from the top and runs only the first matching block, then skips the rest of the chain."
+          }
+        },
+        {
+          "slug": "loops",
+          "title": "Loops",
+          "objective": "Repeat work with for, while, and for...of loops.",
+          "sections": [
+            {
+              "heading": "The classic for loop",
+              "text": "A for loop repeats a block a set number of times. It has three parts: a starting counter, a condition checked before each lap, and an update that runs after each lap.",
+              "code": "for (let i = 1; i <= 3; i++) {\n  console.log(`Lap ${i}`);\n}\n// Lap 1, Lap 2, Lap 3",
+              "language": "javascript"
+            },
+            {
+              "heading": "Looping over a collection",
+              "text": "When you have an array, for...of walks through each item directly with no counter to manage. A while loop is the third option: it keeps running as long as its condition stays true, which suits cases where you do not know the lap count in advance.",
+              "code": "const colors = [\"red\", \"green\", \"blue\"];\nfor (const color of colors) {\n  console.log(color);\n}",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Writing a condition that never becomes false, which creates an infinite loop and freezes the page.",
+            "Starting the counter at 1 when reading array positions. Array indexes start at 0, so the last index is length minus 1."
+          ],
+          "exercise": {
+            "question": "Which loop is the cleanest way to visit every item in an array?",
+            "options": [
+              "while with a manual counter",
+              "for...of",
+              "do...while",
+              "if...else"
+            ],
+            "answer": 1,
+            "explanation": "for...of gives you each item directly without managing indexes, so there is less room for off-by-one errors."
+          }
+        },
+        {
+          "slug": "functions",
+          "title": "Functions",
+          "objective": "Package reusable logic into named and arrow functions.",
+          "sections": [
+            {
+              "heading": "Declaring and calling",
+              "text": "A function is a reusable block of code with a name. Parameters are the inputs listed in parentheses, and return sends a value back to whoever called the function. Defining a function does nothing until you call it.",
+              "code": "function greet(name) {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet(\"Sam\")); // \"Hello, Sam!\"",
+              "language": "javascript"
+            },
+            {
+              "heading": "Arrow functions",
+              "text": "Arrow functions are a shorter syntax, often stored in a const. When the body is a single expression you can drop the braces and the return keyword, which makes small helpers very compact.",
+              "code": "const double = (n) => n * 2;\nconst add = (a, b) => a + b;\nconsole.log(double(7)); // 14\nconsole.log(add(3, 4)); // 7",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Forgetting to return a value. A function without return gives back undefined, even if it calculated something inside.",
+            "Calling a function without parentheses. greet is the function itself, greet(\"Sam\") actually runs it."
+          ],
+          "exercise": {
+            "question": "What does a function return if it has no return statement?",
+            "options": [
+              "0",
+              "null",
+              "undefined",
+              "An empty string"
+            ],
+            "answer": 2,
+            "explanation": "Without an explicit return, every JavaScript function returns undefined by default."
+          }
+        },
+        {
+          "slug": "arrays",
+          "title": "Arrays",
+          "objective": "Store ordered lists of values and transform them with array methods.",
+          "sections": [
+            {
+              "heading": "Creating and updating arrays",
+              "text": "An array holds an ordered list of values inside square brackets. Positions start counting at 0, push adds an item to the end, and length tells you how many items are inside.",
+              "code": "const tasks = [\"wash dishes\", \"study\"];\ntasks.push(\"stretch\");\nconsole.log(tasks[0]); // \"wash dishes\"\nconsole.log(tasks.length); // 3",
+              "language": "javascript"
+            },
+            {
+              "heading": "map and filter",
+              "text": "Two methods you will use constantly: map builds a new array by transforming each item, and filter builds a new array keeping only the items that pass a test. Both leave the original array untouched.",
+              "code": "const nums = [1, 2, 3, 4];\nconst doubled = nums.map((n) => n * 2); // [2, 4, 6, 8]\nconst evens = nums.filter((n) => n % 2 === 0); // [2, 4]",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Reading tasks[tasks.length] to get the last item. The last index is length minus 1.",
+            "Expecting map or filter to change the original array. They return a new array, so store the result in a variable."
+          ],
+          "exercise": {
+            "question": "What does [10, 20, 30].filter((n) => n > 15) return?",
+            "options": [
+              "[10]",
+              "[20, 30]",
+              "[10, 20, 30]",
+              "30"
+            ],
+            "answer": 1,
+            "explanation": "filter keeps only the items that pass the test. 20 and 30 are greater than 15, so the new array is [20, 30]."
+          }
+        },
+        {
+          "slug": "objects",
+          "title": "Objects",
+          "objective": "Group related data and behavior into key-value pairs.",
+          "sections": [
+            {
+              "heading": "Keys and values",
+              "text": "An object groups related data under named keys, wrapped in curly braces. Read a value with dot notation like player.name, or with brackets like player[\"name\"] when the key is stored in a variable.",
+              "code": "const player = {\n  name: \"Rio\",\n  score: 42,\n  active: true,\n};\nconsole.log(player.name); // \"Rio\"\nplayer.score = 50;\nconsole.log(player[\"score\"]); // 50",
+              "language": "javascript"
+            },
+            {
+              "heading": "Methods",
+              "text": "When a key holds a function it is called a method, and inside a method the keyword this refers to the object itself. This is how you attach behavior to data, like a levelUp method that changes the score it belongs to.",
+              "code": "const game = {\n  level: 1,\n  levelUp() {\n    this.level += 1;\n  },\n};\ngame.levelUp();\nconsole.log(game.level); // 2",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Using brackets without quotes, like player[name], which looks up a variable called name instead of the key \"name\".",
+            "Assuming key order or comparing objects with ===. Two objects with the same content are still different objects in memory."
+          ],
+          "exercise": {
+            "question": "How do you read the email key from const user = { email: \"a@b.com\" }?",
+            "options": [
+              "user->email",
+              "user(email)",
+              "user.email",
+              "user::email"
+            ],
+            "answer": 2,
+            "explanation": "Dot notation, user.email, reads a key directly. user[\"email\"] with a quoted string works too."
+          }
+        },
+        {
+          "slug": "dom-basics",
+          "title": "DOM Basics",
+          "objective": "Select elements on the page and change their content from JavaScript.",
+          "sections": [
+            {
+              "heading": "What the DOM is",
+              "text": "When the browser loads your HTML it builds the DOM, a live tree of objects representing every element on the page. JavaScript can search this tree, read it, and change it, and the page updates instantly. Suppose the page contains this markup.",
+              "code": "<h1 id=\"title\">Loading...</h1>\n<p class=\"status\">Please wait</p>",
+              "language": "html"
+            },
+            {
+              "heading": "Selecting and changing elements",
+              "text": "document.querySelector finds the first element matching a CSS selector, so you can reuse the selectors you already know from CSS. Once you have an element, textContent changes its text and classList adds or removes classes.",
+              "code": "const title = document.querySelector(\"#title\");\ntitle.textContent = \"Welcome back\";\n\nconst status = document.querySelector(\".status\");\nstatus.classList.add(\"ready\");",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Running DOM code before the HTML exists. Load your script at the end of the body or use the defer attribute on the script tag.",
+            "Forgetting the # or . in querySelector. It takes a CSS selector, so \"#title\" finds an id and \"title\" finds a <title> tag."
+          ],
+          "exercise": {
+            "question": "Which line selects the element with id=\"menu\"?",
+            "options": [
+              "document.querySelector(\"menu\")",
+              "document.querySelector(\"#menu\")",
+              "document.getElement(\"menu\")",
+              "document.select(\".menu\")"
+            ],
+            "answer": 1,
+            "explanation": "querySelector uses CSS selector syntax, and an id selector starts with #."
+          }
+        },
+        {
+          "slug": "events",
+          "title": "Events",
+          "objective": "React to user actions like clicks and typing with event listeners.",
+          "sections": [
+            {
+              "heading": "Listening for events",
+              "text": "An event is something that happens on the page: a click, a key press, a form submit. addEventListener attaches a function to an element, and the browser calls that function every time the event fires.",
+              "code": "const btn = document.querySelector(\"#save\");\nbtn.addEventListener(\"click\", () => {\n  console.log(\"Saved!\");\n});",
+              "language": "javascript"
+            },
+            {
+              "heading": "The event object",
+              "text": "The browser passes an event object to your listener with details about what happened. For a text input, event.target is the element itself, so event.target.value gives you what the user typed. On form submits, event.preventDefault() stops the page from reloading.",
+              "code": "const input = document.querySelector(\"#search\");\ninput.addEventListener(\"input\", (event) => {\n  console.log(`You typed: ${event.target.value}`);\n});",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Calling the function while attaching it: addEventListener(\"click\", save()) runs save immediately. Pass save without parentheses.",
+            "Forgetting event.preventDefault() on form submits, so the page reloads and your JavaScript state disappears."
+          ],
+          "exercise": {
+            "question": "What is wrong with btn.addEventListener(\"click\", greet())?",
+            "options": [
+              "The event name should be \"onclick\"",
+              "greet() runs immediately instead of waiting for the click",
+              "addEventListener only accepts arrow functions",
+              "Nothing, it works as expected"
+            ],
+            "answer": 1,
+            "explanation": "The parentheses call greet right away and pass its return value. Pass the function itself: addEventListener(\"click\", greet)."
+          }
+        },
+        {
+          "slug": "mini-project-todo-app",
+          "title": "Mini Project: Todo App",
+          "objective": "Combine variables, functions, the DOM, and events to build a working todo list.",
+          "sections": [
+            {
+              "heading": "Project requirements",
+              "text": "Build a small todo app that uses everything from this course. The page needs a text input with id task-input, a button with id add-btn, and an empty ul with id task-list. Clicking the button should add the typed text as a new list item, ignore empty input, and clear the field afterwards. Clicking a list item should toggle a done class so completed tasks can be styled with a strikethrough."
+            },
+            {
+              "heading": "Starter code",
+              "text": "This starter wires up the core flow: read the input, validate it, create a list item, and attach a click listener for the done toggle. Extend it yourself with a delete button on each item or a counter showing how many tasks remain.",
+              "code": "const input = document.querySelector(\"#task-input\");\nconst addBtn = document.querySelector(\"#add-btn\");\nconst list = document.querySelector(\"#task-list\");\n\nconst addTask = () => {\n  const text = input.value.trim();\n  if (text === \"\") return;\n\n  const item = document.createElement(\"li\");\n  item.textContent = text;\n  item.addEventListener(\"click\", () => {\n    item.classList.toggle(\"done\");\n  });\n\n  list.appendChild(item);\n  input.value = \"\";\n};\n\naddBtn.addEventListener(\"click\", addTask);",
+              "language": "javascript"
+            }
+          ],
+          "mistakes": [
+            "Skipping the empty-input check, which fills the list with blank items when the button is clicked repeatedly.",
+            "Creating elements but never calling appendChild, so tasks exist in memory but never appear on the page."
+          ],
+          "exercise": {
+            "question": "In the starter code, what does input.value.trim() do?",
+            "options": [
+              "Deletes the input element from the page",
+              "Removes spaces from the start and end of the typed text",
+              "Converts the text to lowercase",
+              "Clears the input field"
+            ],
+            "answer": 1,
+            "explanation": "trim strips leading and trailing whitespace, so a value of only spaces becomes an empty string and gets rejected by the check."
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Which declaration should you reach for first in modern JavaScript?",
+          "options": [
+            "var",
+            "const",
+            "let",
+            "define"
+          ],
+          "answer": 1,
+          "explanation": "Default to const, switch to let only when the variable must be reassigned, and avoid var entirely."
+        },
+        {
+          "question": "What does \"3\" + 3 evaluate to?",
+          "options": [
+            "6",
+            "\"33\"",
+            "NaN",
+            "An error"
+          ],
+          "answer": 1,
+          "explanation": "When one side of + is a string, JavaScript joins them as text, so the result is the string \"33\"."
+        },
+        {
+          "question": "Which comparison is true?",
+          "options": [
+            "5 === \"5\"",
+            "5 == \"6\"",
+            "5 !== \"5\"",
+            "null === undefined"
+          ],
+          "answer": 2,
+          "explanation": "Strict comparison checks type as well as value. A number is never strictly equal to a string, so 5 !== \"5\" is true."
+        },
+        {
+          "question": "What does [1, 2, 3].map((n) => n * 10) return?",
+          "options": [
+            "[10, 20, 30]",
+            "[1, 2, 3]",
+            "60",
+            "[10]"
+          ],
+          "answer": 0,
+          "explanation": "map applies the function to every item and returns a new array of the results."
+        },
+        {
+          "question": "Which method finds the first element matching a CSS selector?",
+          "options": [
+            "document.findElement",
+            "document.querySelector",
+            "document.getSelector",
+            "document.matchCSS"
+          ],
+          "answer": 1,
+          "explanation": "document.querySelector takes any CSS selector, like \"#id\", \".class\", or a tag name, and returns the first match."
+        },
+        {
+          "question": "How do you run a function named save every time a button is clicked?",
+          "options": [
+            "btn.addEventListener(\"click\", save())",
+            "btn.addEventListener(save, \"click\")",
+            "btn.addEventListener(\"click\", save)",
+            "btn.onClick = save()"
+          ],
+          "answer": 2,
+          "explanation": "Pass the function itself, without parentheses, so the browser can call it later on each click."
+        }
+      ]
+    },
+    {
+      "slug": "python",
+      "title": "Python",
+      "icon": "🐍",
+      "category": "Programming Languages",
+      "level": "Beginner",
+      "estimatedHours": 6,
+      "tagline": "A friendly language that gets real work done",
+      "description": "Learn the language behind automation, data work, and modern backends. Python has clean, readable syntax, which makes it one of the best first languages you can pick.",
+      "lessons": [
+        {
+          "slug": "introduction-to-python",
+          "title": "Introduction to Python",
+          "objective": "Understand what Python is and how you will practice it on this platform.",
+          "sections": [
+            {
+              "heading": "What Python is",
+              "text": "Python is a general purpose programming language used for automation, websites, data analysis, and much more. Its syntax reads almost like plain English, so you spend your energy on ideas instead of punctuation. You write instructions in a file, and the Python interpreter runs them from top to bottom."
+            },
+            {
+              "heading": "Your first program",
+              "text": "The print function displays text on the screen, and a one line program is already a real program. One note: Python examples on this platform are read-and-edit examples, since the browser cannot run Python yet. Copy them into a local editor or an online interpreter to see them run.",
+              "code": "print(\"Hello from Jovexa Learn\")\nprint(\"Python runs this line second\")",
+              "language": "python"
+            }
+          ],
+          "mistakes": [
+            "Writing print \"hello\" without parentheses. That was Python 2 syntax; Python 3 always uses print(\"hello\").",
+            "Treating indentation as decoration. In Python, indentation is part of the language and changes what your code means."
+          ],
+          "exercise": {
+            "question": "Which function displays text output in Python 3?",
+            "options": [
+              "echo()",
+              "console.log()",
+              "print()",
+              "display()"
+            ],
+            "answer": 2,
+            "explanation": "print() is the built-in Python function for writing output to the screen."
+          }
+        },
+        {
+          "slug": "variables",
+          "title": "Variables",
+          "objective": "Store and update values using variables.",
+          "sections": [
+            {
+              "heading": "Creating a variable",
+              "text": "A variable is a name that points to a value. You create one with a single equals sign, and there is no special declaration keyword. Assigning a new value to the same name simply replaces the old one.",
+              "code": "name = \"Ava\"\nage = 19\nheight = 1.68\nage = age + 1\nprint(name, age, height)",
+              "language": "python"
+            },
+            {
+              "heading": "Naming rules",
+              "text": "Variable names can use letters, digits, and underscores, but cannot start with a digit. Python convention is snake_case, like total_price or user_name. Names are case sensitive, so Score and score are two different variables."
+            }
+          ],
+          "mistakes": [
+            "Starting a variable name with a number, like 2players. Write players2 or two_players instead.",
+            "Confusing = with ==. A single equals sign assigns a value, while a double equals sign compares two values."
+          ],
+          "exercise": {
+            "question": "Which of these is a valid Python variable name?",
+            "options": [
+              "2nd_place",
+              "total-price",
+              "user_name",
+              "class"
+            ],
+            "answer": 2,
+            "explanation": "user_name follows the rules. Names cannot start with a digit, hyphens are not allowed, and class is a reserved keyword."
+          }
+        },
+        {
+          "slug": "data-types",
+          "title": "Data Types",
+          "objective": "Recognize the core Python types and convert between them.",
+          "sections": [
+            {
+              "heading": "The types you will meet first",
+              "text": "Strings (str) hold text, integers (int) hold whole numbers, floats (float) hold decimal numbers, and booleans (bool) hold True or False. The type function tells you what type any value has, which is handy while learning.",
+              "code": "city = \"Nairobi\"\nyear = 2026\nprice = 4.99\nis_open = True\nprint(type(city), type(year))\nprint(type(price), type(is_open))",
+              "language": "python"
+            },
+            {
+              "heading": "Converting between types",
+              "text": "Python will not silently mix text and numbers, so you convert on purpose. int() and float() turn text into numbers, and str() turns a number into text you can join with other strings.",
+              "code": "age_text = \"21\"\nage = int(age_text)\nprint(age + 1)\nprint(\"Age: \" + str(age))",
+              "language": "python"
+            }
+          ],
+          "mistakes": [
+            "Adding a string to a number, like \"5\" + 3. Convert first with int(\"5\") + 3.",
+            "Assuming \"5\" and 5 are the same value. One is text and the other is a number, and they behave differently."
+          ],
+          "exercise": {
+            "question": "What does type(3.14) return?",
+            "options": [
+              "int",
+              "float",
+              "str",
+              "decimal"
+            ],
+            "answer": 1,
+            "explanation": "Numbers with a decimal point are floats, so type(3.14) reports float."
+          }
+        },
+        {
+          "slug": "conditions",
+          "title": "Conditions",
+          "objective": "Make programs choose between paths with if, elif, and else.",
+          "sections": [
+            {
+              "heading": "if, elif, else",
+              "text": "An if statement runs its indented block only when its condition is true. elif checks another condition when the first one failed, and else catches every remaining case. Each condition line ends with a colon, and the block under it is indented.",
+              "code": "score = 74\nif score >= 80:\n    print(\"Great work\")\nelif score >= 50:\n    print(\"You passed\")\nelse:\n    print(\"Try again\")",
+              "language": "python"
+            },
+            {
+              "heading": "Comparing and combining",
+              "text": "Comparison operators include == equal, != not equal, and the usual <, >, <=, >=. You can combine checks with and, or, and not to build richer conditions.",
+              "code": "age = 20\nhas_ticket = True\nif age >= 18 and has_ticket:\n    print(\"Welcome in\")",
+              "language": "python"
+            }
+          ],
+          "mistakes": [
+            "Using a single = inside a condition. Comparison needs ==, so write if score == 100, not if score = 100.",
+            "Forgetting the colon at the end of if, elif, or else lines, which causes a syntax error."
+          ],
+          "exercise": {
+            "question": "Which keyword checks another condition after the first if fails?",
+            "options": [
+              "elseif",
+              "elif",
+              "otherwise",
+              "case"
+            ],
+            "answer": 1,
+            "explanation": "Python spells it elif. It runs its check only when the conditions above it were false."
+          }
+        },
+        {
+          "slug": "loops",
+          "title": "Loops",
+          "objective": "Repeat work with for and while loops.",
+          "sections": [
+            {
+              "heading": "for loops",
+              "text": "A for loop repeats a block once for each item in a sequence. range(3) produces the numbers 0, 1, and 2, and looping over a list visits each item in order.",
+              "code": "for number in range(3):\n    print(\"Round\", number)\n\nfruits = [\"apple\", \"mango\", \"pear\"]\nfor fruit in fruits:\n    print(fruit)",
+              "language": "python"
+            },
+            {
+              "heading": "while loops",
+              "text": "A while loop keeps running as long as its condition stays true, which is useful when you do not know the number of repeats in advance. Make sure something inside the loop moves the condition toward false, or the loop never ends.",
+              "code": "count = 3\nwhile count > 0:\n    print(count)\n    count = count - 1\nprint(\"Liftoff\")",
+              "language": "python"
+            }
+          ],
+          "mistakes": [
+            "Forgetting to update the counter in a while loop, which creates an infinite loop.",
+            "Expecting range(5) to include 5. It produces 0 through 4, five numbers in total."
+          ],
+          "exercise": {
+            "question": "How many times does the body of \"for i in range(3):\" run?",
+            "options": [
+              "2",
+              "3",
+              "4",
+              "It depends on i"
+            ],
+            "answer": 1,
+            "explanation": "range(3) yields 0, 1, and 2, so the loop body runs exactly three times."
+          }
+        },
+        {
+          "slug": "functions",
+          "title": "Functions",
+          "objective": "Package reusable logic into functions with parameters and return values.",
+          "sections": [
+            {
+              "heading": "Defining and calling",
+              "text": "The def keyword defines a function, parameters go in parentheses, and return sends a value back to the caller. Nothing inside the function runs until you actually call it.",
+              "code": "def greet(name):\n    return \"Hello, \" + name\n\nmessage = greet(\"Sam\")\nprint(message)",
+              "language": "python"
+            },
+            {
+              "heading": "Default values and return vs print",
+              "text": "A parameter can have a default value that is used when the caller leaves it out. Remember that print only shows a value on screen, while return hands the value back so the rest of your program can use it.",
+              "code": "def area(width, height=10):\n    return width * height\n\nprint(area(5))\nprint(area(5, 3))",
+              "language": "python"
+            }
+          ],
+          "mistakes": [
+            "Forgetting return and wondering why the function gives back None.",
+            "Calling greet instead of greet(\"Sam\"). Without parentheses you refer to the function, you do not run it."
+          ],
+          "exercise": {
+            "question": "What does a function return when it has no return statement?",
+            "options": [
+              "0",
+              "An empty string",
+              "None",
+              "It raises an error"
+            ],
+            "answer": 2,
+            "explanation": "A function with no return statement implicitly returns the special value None."
+          }
+        },
+        {
+          "slug": "lists",
+          "title": "Lists",
+          "objective": "Store ordered collections and access items by index.",
+          "sections": [
+            {
+              "heading": "Creating and indexing",
+              "text": "A list holds items in order inside square brackets. Indexing starts at 0, so the first item is list[0]. Negative indexes count from the end, so list[-1] is the last item.",
+              "code": "colors = [\"red\", \"green\", \"blue\"]\nprint(colors[0])\nprint(colors[-1])",
+              "language": "python"
+            },
+            {
+              "heading": "Changing and measuring lists",
+              "text": "append adds an item to the end and remove deletes the first match. len tells you how many items a list has, and slicing like colors[0:2] copies a portion without touching the original.",
+              "code": "colors = [\"red\", \"green\", \"blue\"]\ncolors.append(\"gold\")\ncolors.remove(\"green\")\nprint(len(colors))\nprint(colors[0:2])",
+              "language": "python"
+            }
+          ],
+          "mistakes": [
+            "Asking for an index that does not exist, like colors[5] on a three item list, which raises an IndexError.",
+            "Forgetting that indexing starts at 0, so the third item lives at index 2, not index 3."
+          ],
+          "exercise": {
+            "question": "Given colors = [\"red\", \"green\", \"blue\"], what is colors[1]?",
+            "options": [
+              "\"red\"",
+              "\"green\"",
+              "\"blue\"",
+              "An error"
+            ],
+            "answer": 1,
+            "explanation": "Indexes start at 0, so index 1 is the second item, \"green\"."
+          }
+        },
+        {
+          "slug": "dictionaries",
+          "title": "Dictionaries",
+          "objective": "Store labeled data as key and value pairs.",
+          "sections": [
+            {
+              "heading": "Keys and values",
+              "text": "A dictionary maps keys to values inside curly braces. You read and update values by key rather than by position, which makes dictionaries perfect for describing one thing with several named facts.",
+              "code": "person = {\"name\": \"Lena\", \"age\": 30}\nprint(person[\"name\"])\nperson[\"age\"] = 31",
+              "language": "python"
+            },
+            {
+              "heading": "Adding, safe reads, and looping",
+              "text": "Assigning to a new key adds it. The get method reads a key safely and returns a fallback when the key is missing, and items() lets you loop over every pair.",
+              "code": "person = {\"name\": \"Lena\", \"age\": 31}\nperson[\"city\"] = \"Oslo\"\nprint(person.get(\"email\", \"not set\"))\nfor key, value in person.items():\n    print(key, value)",
+              "language": "python"
+            }
+          ],
+          "mistakes": [
+            "Reading a missing key with square brackets, which raises a KeyError. Use get when the key might not exist.",
+            "Mixing up lists and dictionaries: lists use numeric positions, dictionaries use named keys."
+          ],
+          "exercise": {
+            "question": "Which is the safe way to read a key that might be missing?",
+            "options": [
+              "person[\"email\"]",
+              "person.get(\"email\", \"not set\")",
+              "person.email",
+              "person.fetch(\"email\")"
+            ],
+            "answer": 1,
+            "explanation": "get returns the fallback value instead of raising a KeyError when the key is absent."
+          }
+        },
+        {
+          "slug": "working-with-files",
+          "title": "Working with Files",
+          "objective": "Read from and write to text files safely.",
+          "sections": [
+            {
+              "heading": "Reading a file",
+              "text": "The open function opens a file, and the with statement guarantees it closes automatically, even if an error happens. read() returns the whole file content as one string.",
+              "code": "with open(\"notes.txt\") as file:\n    content = file.read()\n    print(content)",
+              "language": "python"
+            },
+            {
+              "heading": "Writing and appending",
+              "text": "Mode \"w\" writes a fresh file and erases anything that was already there, while mode \"a\" appends to the end and keeps existing content. Add a newline character yourself when you want each entry on its own line.",
+              "code": "with open(\"log.txt\", \"a\") as file:\n    file.write(\"New entry\\n\")",
+              "language": "python"
+            }
+          ],
+          "mistakes": [
+            "Opening files without the with statement and forgetting to close them, which can lose buffered data.",
+            "Using mode \"w\" when you meant to add to a file. Mode \"w\" wipes the existing content first."
+          ],
+          "exercise": {
+            "question": "Which mode adds new content to the end of an existing file?",
+            "options": [
+              "\"r\"",
+              "\"w\"",
+              "\"a\"",
+              "\"x\""
+            ],
+            "answer": 2,
+            "explanation": "Mode \"a\" appends. \"r\" reads, \"w\" overwrites, and \"x\" creates a brand new file."
+          }
+        },
+        {
+          "slug": "mini-project-simple-calculator",
+          "title": "Mini Project: Simple Calculator",
+          "objective": "Combine input, conditions, and conversion to build a command-line calculator.",
+          "sections": [
+            {
+              "heading": "Project requirements",
+              "text": "Build a program that asks the user for two numbers and an operation. It should support +, -, *, and /, print the result, and show a clear message instead of crashing when someone divides by zero. As a stretch goal, wrap everything in a while loop so the user can calculate again until they type quit."
+            },
+            {
+              "heading": "Starter code",
+              "text": "This starter covers the core flow: read input, convert it to numbers, pick a branch, and print the result. Type it into your local editor, run it, then extend it with the stretch goal.",
+              "code": "print(\"Simple Calculator\")\na = float(input(\"First number: \"))\nb = float(input(\"Second number: \"))\nop = input(\"Operation (+, -, *, /): \")\n\nif op == \"+\":\n    print(a + b)\nelif op == \"-\":\n    print(a - b)\nelif op == \"*\":\n    print(a * b)\nelif op == \"/\":\n    if b == 0:\n        print(\"Cannot divide by zero\")\n    else:\n        print(a / b)\nelse:\n    print(\"Unknown operation\")",
+              "language": "python"
+            }
+          ],
+          "mistakes": [
+            "Doing math on input() results directly. input always returns a string, so convert with float or int first.",
+            "Skipping the divide by zero check, which crashes the program with a ZeroDivisionError."
+          ],
+          "exercise": {
+            "question": "What type of value does input() always return?",
+            "options": [
+              "int",
+              "float",
+              "str",
+              "Whatever the user typed"
+            ],
+            "answer": 2,
+            "explanation": "input() always returns a string, even when the user types digits, so convert before doing math."
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Which symbol assigns a value to a variable?",
+          "options": [
+            "==",
+            "=",
+            ":=then",
+            "->"
+          ],
+          "answer": 1,
+          "explanation": "A single equals sign assigns. Double equals compares two values."
+        },
+        {
+          "question": "What is the type of the value True?",
+          "options": [
+            "str",
+            "int",
+            "bool",
+            "truth"
+          ],
+          "answer": 2,
+          "explanation": "True and False are the two boolean values, type bool."
+        },
+        {
+          "question": "Which keyword starts a function definition?",
+          "options": [
+            "function",
+            "def",
+            "fn",
+            "lambda only"
+          ],
+          "answer": 1,
+          "explanation": "Functions are defined with def, followed by the name and parameters."
+        },
+        {
+          "question": "What does len([\"a\", \"b\", \"c\"]) return?",
+          "options": [
+            "2",
+            "3",
+            "\"abc\"",
+            "An error"
+          ],
+          "answer": 1,
+          "explanation": "len counts the items in the list, and this list has three items."
+        },
+        {
+          "question": "How do you read the value stored under the key \"name\" in a dictionary called person?",
+          "options": [
+            "person.name",
+            "person(\"name\")",
+            "person[\"name\"]",
+            "person->name"
+          ],
+          "answer": 2,
+          "explanation": "Dictionaries use square brackets with the key: person[\"name\"]."
+        },
+        {
+          "question": "Why should you open files with the with statement?",
+          "options": [
+            "It makes reading faster",
+            "It closes the file automatically, even after an error",
+            "It converts the file to a string",
+            "It is required by Python 3"
+          ],
+          "answer": 1,
+          "explanation": "with guarantees the file is closed when the block ends, so you never leak open file handles."
+        }
+      ]
+    },
+    {
+      "slug": "sql",
+      "title": "SQL",
+      "icon": "🗄️",
+      "category": "Databases",
+      "level": "Beginner",
+      "estimatedHours": 4,
+      "tagline": "Ask questions and get answers from your data",
+      "description": "Learn to read, add, change, and connect data stored in relational databases. SQL is the standard language behind almost every app that remembers anything.",
+      "lessons": [
+        {
+          "slug": "introduction-to-sql",
+          "title": "Introduction to SQL",
+          "objective": "Understand what SQL is and how data is organized into tables, rows, and columns.",
+          "sections": [
+            {
+              "heading": "What SQL does",
+              "text": "SQL (Structured Query Language) is how you talk to a relational database. Instead of writing loops, you describe the result you want and the database figures out how to fetch it. Throughout this course we use a small game studio database with three tables: players, scores, and games."
+            },
+            {
+              "heading": "Tables, rows, and columns",
+              "text": "A table is like a spreadsheet with a fixed set of columns. Each row is one record, such as one player. This statement creates our players table so you can see the shape of the data we will query.",
+              "code": "CREATE TABLE players (\n  id INTEGER PRIMARY KEY,\n  username TEXT,\n  country TEXT,\n  joined_date DATE\n);",
+              "language": "sql"
+            }
+          ],
+          "mistakes": [
+            "Expecting SQL to run top to bottom like a script. Each statement is an independent request that the database answers on its own.",
+            "Confusing the database with the table. A database holds many tables, and each table holds rows of one kind of record."
+          ],
+          "exercise": {
+            "question": "In a relational database, what does a single row in the players table represent?",
+            "options": [
+              "One column of data",
+              "One player record",
+              "The entire database",
+              "A backup of the table"
+            ],
+            "answer": 1,
+            "explanation": "Each row is one record. In the players table, one row holds all the stored details for one player."
+          }
+        },
+        {
+          "slug": "select",
+          "title": "SELECT",
+          "objective": "Read data from a table by choosing which columns to return.",
+          "sections": [
+            {
+              "heading": "Reading rows with SELECT",
+              "text": "SELECT is the statement you will type most often. You list the columns you want, then name the table after FROM. The database returns a result set, which is itself a small temporary table.",
+              "code": "SELECT username, country\nFROM players;",
+              "language": "sql"
+            },
+            {
+              "heading": "Selecting everything",
+              "text": "The star symbol asks for every column. It is handy while exploring, but in real applications it is better to name columns so your result does not silently change when someone adds a new column to the table.",
+              "code": "SELECT *\nFROM players;",
+              "language": "sql"
+            }
+          ],
+          "mistakes": [
+            "Writing SELECT * in production code, which fetches columns you do not need and breaks assumptions when the table changes.",
+            "Forgetting the FROM clause. SELECT username on its own does not tell the database which table to read."
+          ],
+          "exercise": {
+            "question": "Which statement returns only the username column from the players table?",
+            "options": [
+              "SELECT players FROM username;",
+              "GET username FROM players;",
+              "SELECT username FROM players;",
+              "SELECT * FROM username;"
+            ],
+            "answer": 2,
+            "explanation": "The pattern is SELECT column FROM table. Columns come first, then the table name after FROM."
+          }
+        },
+        {
+          "slug": "where",
+          "title": "WHERE",
+          "objective": "Filter rows so a query returns only the records that match a condition.",
+          "sections": [
+            {
+              "heading": "Filtering with conditions",
+              "text": "WHERE keeps only the rows where a condition is true. You compare columns to values with operators like =, <, >, and <>. Text values go inside single quotes, numbers do not.",
+              "code": "SELECT username, country\nFROM players\nWHERE country = 'Japan';",
+              "language": "sql"
+            },
+            {
+              "heading": "Combining conditions",
+              "text": "AND requires both conditions to be true, OR requires at least one. You can group logic with parentheses to make the intent obvious. This query finds high scores in one specific game.",
+              "code": "SELECT player_id, points\nFROM scores\nWHERE game_id = 3 AND points > 9000;",
+              "language": "sql"
+            }
+          ],
+          "mistakes": [
+            "Using double quotes for text values. Standard SQL expects single quotes, as in country = 'Japan'.",
+            "Writing WHERE points = NULL to find missing values. NULL needs IS NULL or IS NOT NULL, not the = operator."
+          ],
+          "exercise": {
+            "question": "Which query returns players who joined after 2025-01-01 AND are from Brazil?",
+            "options": [
+              "SELECT * FROM players WHERE joined_date > '2025-01-01' AND country = 'Brazil';",
+              "SELECT * FROM players WHERE joined_date > '2025-01-01' OR country = 'Brazil';",
+              "SELECT * FROM players IF joined_date > '2025-01-01' AND country = 'Brazil';",
+              "SELECT * FROM players WHERE joined_date > '2025-01-01' + country = 'Brazil';"
+            ],
+            "answer": 0,
+            "explanation": "AND makes both conditions required. OR would also include players from Brazil who joined earlier."
+          }
+        },
+        {
+          "slug": "order-by",
+          "title": "ORDER BY",
+          "objective": "Sort query results by one or more columns in ascending or descending order.",
+          "sections": [
+            {
+              "heading": "Sorting results",
+              "text": "Rows come back in no guaranteed order unless you ask for one. ORDER BY sorts the result by a column. ASC means ascending and is the default, DESC means descending. A leaderboard is a classic use case.",
+              "code": "SELECT player_id, points\nFROM scores\nORDER BY points DESC;",
+              "language": "sql"
+            },
+            {
+              "heading": "Sorting by more than one column",
+              "text": "You can list several columns separated by commas. The database sorts by the first column, then breaks ties using the second. Here players are grouped alphabetically by country, newest members first within each country.",
+              "code": "SELECT username, country, joined_date\nFROM players\nORDER BY country ASC, joined_date DESC;",
+              "language": "sql"
+            }
+          ],
+          "mistakes": [
+            "Assuming rows arrive sorted without ORDER BY. The database may return any order, and it can change between runs.",
+            "Placing ORDER BY before WHERE. Filtering comes first in the statement, sorting goes at the end."
+          ],
+          "exercise": {
+            "question": "How do you list scores from highest points to lowest?",
+            "options": [
+              "ORDER BY points ASC",
+              "ORDER BY points DESC",
+              "SORT BY points HIGH",
+              "GROUP BY points DESC"
+            ],
+            "answer": 1,
+            "explanation": "DESC sorts from largest to smallest, which puts the top score first."
+          }
+        },
+        {
+          "slug": "insert",
+          "title": "INSERT",
+          "objective": "Add new rows to a table with the INSERT INTO statement.",
+          "sections": [
+            {
+              "heading": "Adding a row",
+              "text": "INSERT INTO names the table and the columns you are filling, then VALUES supplies the data in the same order. Naming the columns keeps the statement working even if the table gains new columns later.",
+              "code": "INSERT INTO players (username, country, joined_date)\nVALUES ('pixel_fox', 'Canada', '2026-09-01');",
+              "language": "sql"
+            },
+            {
+              "heading": "Inserting several rows at once",
+              "text": "You can pass multiple value groups separated by commas. This is faster than repeating the whole statement for every row, and it keeps related inserts together.",
+              "code": "INSERT INTO games (title, genre)\nVALUES\n  ('Star Drift', 'Racing'),\n  ('Mole Patrol', 'Puzzle');",
+              "language": "sql"
+            }
+          ],
+          "mistakes": [
+            "Listing values in a different order than the columns, which quietly puts data in the wrong fields.",
+            "Supplying a value for an auto-generated id column. Let the database assign primary keys itself."
+          ],
+          "exercise": {
+            "question": "What does the VALUES clause do in an INSERT statement?",
+            "options": [
+              "It filters which rows get inserted",
+              "It supplies the data for the new row, matching the column list order",
+              "It renames the columns of the table",
+              "It sorts the table after inserting"
+            ],
+            "answer": 1,
+            "explanation": "VALUES provides the actual data. Each value lines up with the column in the same position in the column list."
+          }
+        },
+        {
+          "slug": "update",
+          "title": "UPDATE",
+          "objective": "Change existing rows safely with UPDATE and a WHERE clause.",
+          "sections": [
+            {
+              "heading": "Changing data",
+              "text": "UPDATE names the table, SET lists the columns to change with their new values, and WHERE picks which rows are affected. Here one player moves to a new country.",
+              "code": "UPDATE players\nSET country = 'Germany'\nWHERE username = 'pixel_fox';",
+              "language": "sql"
+            },
+            {
+              "heading": "The WHERE clause is your safety net",
+              "text": "Without WHERE, an UPDATE changes every row in the table. A good habit is to run a SELECT with the same WHERE clause first, confirm the rows it returns, then convert it into the UPDATE.",
+              "code": "SELECT * FROM players WHERE username = 'pixel_fox';\n\nUPDATE players\nSET country = 'Germany'\nWHERE username = 'pixel_fox';",
+              "language": "sql"
+            }
+          ],
+          "mistakes": [
+            "Running UPDATE without a WHERE clause and overwriting a column in every single row.",
+            "Using = twice, as in SET country = = value. SET uses one equals sign per column assignment."
+          ],
+          "exercise": {
+            "question": "What happens if you run UPDATE players SET country = 'Spain'; with no WHERE clause?",
+            "options": [
+              "The database rejects the statement",
+              "Only the first row changes",
+              "Every player row gets country set to Spain",
+              "Nothing changes until you commit twice"
+            ],
+            "answer": 2,
+            "explanation": "UPDATE applies to all rows that match the WHERE clause, and with no WHERE clause every row matches."
+          }
+        },
+        {
+          "slug": "delete",
+          "title": "DELETE",
+          "objective": "Remove rows from a table without dropping the table itself.",
+          "sections": [
+            {
+              "heading": "Removing rows",
+              "text": "DELETE FROM removes whole rows that match the WHERE condition. The table and its columns stay in place, only the matching records disappear. This removes one retired game from the catalog.",
+              "code": "DELETE FROM games\nWHERE title = 'Mole Patrol';",
+              "language": "sql"
+            },
+            {
+              "heading": "DELETE vs DROP",
+              "text": "DELETE removes rows, DROP TABLE removes the entire table including its structure. Deleted rows are usually gone for good once the change is committed, so double check the WHERE clause with a SELECT first."
+            }
+          ],
+          "mistakes": [
+            "Forgetting the WHERE clause, which empties the whole table in one statement.",
+            "Writing DELETE * FROM games. DELETE does not take a column list, the correct form is DELETE FROM games."
+          ],
+          "exercise": {
+            "question": "Which statement removes only scores below 100 points?",
+            "options": [
+              "DELETE FROM scores WHERE points < 100;",
+              "DELETE scores WHERE points < 100;",
+              "DROP FROM scores WHERE points < 100;",
+              "REMOVE * FROM scores WHERE points < 100;"
+            ],
+            "answer": 0,
+            "explanation": "The correct pattern is DELETE FROM table WHERE condition. DROP is for removing whole tables."
+          }
+        },
+        {
+          "slug": "join-basics",
+          "title": "JOIN Basics",
+          "objective": "Combine rows from two tables using a shared key column.",
+          "sections": [
+            {
+              "heading": "Why joins exist",
+              "text": "Related data lives in separate tables to avoid duplication. The scores table stores a player_id instead of repeating the username on every score. A JOIN stitches the tables back together by matching those id values.",
+              "code": "SELECT players.username, scores.points\nFROM scores\nJOIN players ON scores.player_id = players.id;",
+              "language": "sql"
+            },
+            {
+              "heading": "INNER vs LEFT JOIN",
+              "text": "A plain JOIN (also called INNER JOIN) returns only rows that match in both tables. A LEFT JOIN keeps every row from the first table and fills in NULL where the second table has no match, which is useful for finding players who have never posted a score.",
+              "code": "SELECT players.username, scores.points\nFROM players\nLEFT JOIN scores ON scores.player_id = players.id;",
+              "language": "sql"
+            }
+          ],
+          "mistakes": [
+            "Leaving out the ON condition, which pairs every row with every other row and produces a huge meaningless result.",
+            "Using an INNER JOIN when you need unmatched rows too. Players with no scores vanish unless you use a LEFT JOIN."
+          ],
+          "exercise": {
+            "question": "What does the ON clause in a JOIN specify?",
+            "options": [
+              "Which database to connect to",
+              "How rows from the two tables match up",
+              "The order of the final results",
+              "Which columns are returned"
+            ],
+            "answer": 1,
+            "explanation": "ON defines the matching rule, usually a shared key like scores.player_id = players.id."
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Which statement reads data from a table?",
+          "options": [
+            "INSERT",
+            "SELECT",
+            "UPDATE",
+            "DELETE"
+          ],
+          "answer": 1,
+          "explanation": "SELECT retrieves rows. INSERT adds, UPDATE changes, and DELETE removes them."
+        },
+        {
+          "question": "Which clause filters rows so only matching records are returned?",
+          "options": [
+            "ORDER BY",
+            "FROM",
+            "WHERE",
+            "SET"
+          ],
+          "answer": 2,
+          "explanation": "WHERE keeps only the rows where the condition is true, in SELECT, UPDATE, and DELETE alike."
+        },
+        {
+          "question": "Which query lists players sorted alphabetically by username?",
+          "options": [
+            "SELECT username FROM players ORDER BY username ASC;",
+            "SELECT username FROM players SORT username;",
+            "SELECT username ORDER BY players;",
+            "SELECT username FROM players WHERE username ASC;"
+          ],
+          "answer": 0,
+          "explanation": "ORDER BY column ASC sorts ascending, which is alphabetical for text."
+        },
+        {
+          "question": "Which statement correctly adds a new game?",
+          "options": [
+            "ADD INTO games (title) VALUES ('Sky Loop');",
+            "INSERT games SET title = 'Sky Loop';",
+            "INSERT INTO games (title) VALUES ('Sky Loop');",
+            "UPDATE games ADD title = 'Sky Loop';"
+          ],
+          "answer": 2,
+          "explanation": "New rows use INSERT INTO table (columns) VALUES (data). SET belongs to UPDATE."
+        },
+        {
+          "question": "What is the biggest risk when running UPDATE or DELETE?",
+          "options": [
+            "The table gets sorted incorrectly",
+            "Forgetting the WHERE clause and affecting every row",
+            "The database creates duplicate tables",
+            "Column names get renamed"
+          ],
+          "answer": 1,
+          "explanation": "Without WHERE, UPDATE rewrites every row and DELETE removes every row. Always check the condition first."
+        },
+        {
+          "question": "A LEFT JOIN from players to scores returns what?",
+          "options": [
+            "Only players who have at least one score",
+            "Only scores with no matching player",
+            "All players, with NULL score columns for players who have no scores",
+            "The two tables merged into one permanent table"
+          ],
+          "answer": 2,
+          "explanation": "LEFT JOIN keeps every row from the left table and fills unmatched right-table columns with NULL."
+        }
+      ]
+    },
+    {
+      "slug": "git",
+      "title": "Git & GitHub",
+      "icon": "🌿",
+      "category": "Developer Tools",
+      "level": "Beginner",
+      "estimatedHours": 3,
+      "tagline": "Track every change and never lose work again",
+      "description": "Learn how developers save, share, and rewind their code. Git records the history of your project and GitHub lets you back it up and collaborate with others.",
+      "lessons": [
+        {
+          "slug": "introduction-to-version-control",
+          "title": "Introduction to Version Control",
+          "objective": "Understand what version control is and why every developer relies on it.",
+          "sections": [
+            {
+              "heading": "What version control solves",
+              "text": "Version control records snapshots of your project over time. Instead of copying folders named final, final2, and final-really, you keep one folder and Git remembers every saved state. You can look back, compare versions, and restore anything you have committed."
+            },
+            {
+              "heading": "Checking that Git is ready",
+              "text": "Git is a program you run from the terminal. Before anything else, confirm it is installed and tell it who you are, because every snapshot is stamped with a name and email.",
+              "code": "git --version\n# introduce yourself once per machine\ngit config --global user.name \"Ada Codes\"\ngit config --global user.email \"ada@example.com\"",
+              "language": "bash"
+            }
+          ],
+          "mistakes": [
+            "Thinking Git and GitHub are the same thing. Git is the tool on your computer, GitHub is a website that hosts Git projects.",
+            "Skipping the user.name and user.email setup, which leaves commits stamped with wrong or empty author details."
+          ],
+          "exercise": {
+            "question": "What is the main purpose of version control?",
+            "options": [
+              "Making code run faster",
+              "Recording the history of a project so you can compare and restore versions",
+              "Hosting websites on the internet",
+              "Automatically fixing bugs in code"
+            ],
+            "answer": 1,
+            "explanation": "Version control tracks how a project changes over time. Speed, hosting, and bug fixing are separate concerns."
+          }
+        },
+        {
+          "slug": "repositories",
+          "title": "Repositories",
+          "objective": "Know what a repository is and where Git stores its history.",
+          "sections": [
+            {
+              "heading": "A repository is a tracked folder",
+              "text": "A repository, or repo, is simply a project folder that Git is watching. All of the history lives in a hidden .git folder inside it. Delete that hidden folder and the files remain, but the entire history is gone."
+            },
+            {
+              "heading": "Local and remote repos",
+              "text": "The repo on your computer is the local repo. A copy hosted on a service like GitHub is a remote repo. You work locally, then sync with the remote to back up your history or share it with teammates.",
+              "code": "# see the hidden .git folder inside a repo\nls -a\n# list any remotes this repo is connected to\ngit remote -v",
+              "language": "bash"
+            }
+          ],
+          "mistakes": [
+            "Deleting or editing files inside the .git folder by hand. Let Git manage it.",
+            "Creating a repo inside another repo by accident, which confuses Git about which history a file belongs to."
+          ],
+          "exercise": {
+            "question": "Where does Git keep the history of a repository?",
+            "options": [
+              "In a hidden .git folder inside the project",
+              "In a file called history.txt",
+              "Only on GitHub servers",
+              "In the operating system settings"
+            ],
+            "answer": 0,
+            "explanation": "Everything Git knows about a project lives in the hidden .git folder at the root of the repo."
+          }
+        },
+        {
+          "slug": "git-init",
+          "title": "git init",
+          "objective": "Turn an ordinary folder into a Git repository.",
+          "sections": [
+            {
+              "heading": "Starting a repo",
+              "text": "Run git init once inside a project folder to start tracking it. The command creates the hidden .git folder and nothing else changes: your files are untouched and no snapshot exists yet.",
+              "code": "mkdir recipe-app\ncd recipe-app\ngit init\n# check what Git sees\ngit status",
+              "language": "bash"
+            },
+            {
+              "heading": "Reading git status",
+              "text": "git status is your dashboard. Right after init it reports that you are on a branch with no commits yet, and any files you create show up as untracked until you add them. Run it often, it never changes anything."
+            }
+          ],
+          "mistakes": [
+            "Running git init in a huge folder like the home directory or Desktop, which makes Git try to track everything you own.",
+            "Running git init twice expecting a reset. It is safe but does nothing new; the repo already exists."
+          ],
+          "exercise": {
+            "question": "What does git init actually do?",
+            "options": [
+              "Uploads the folder to GitHub",
+              "Creates a hidden .git folder so Git can start tracking the project",
+              "Makes the first commit automatically",
+              "Downloads someone else's project"
+            ],
+            "answer": 1,
+            "explanation": "git init only creates the .git folder. Nothing is committed and nothing goes online until you take further steps."
+          }
+        },
+        {
+          "slug": "git-add",
+          "title": "git add",
+          "objective": "Stage changes so they are ready to be committed.",
+          "sections": [
+            {
+              "heading": "The staging area",
+              "text": "Git does not snapshot files directly from your folder. First you place changes in the staging area with git add. Think of it as a box you pack before sealing it: only what you put in the box becomes part of the next commit.",
+              "code": "# stage one file\ngit add index.html\n# stage several files\ngit add style.css app.js\n# stage everything changed in this folder\ngit add .",
+              "language": "bash"
+            },
+            {
+              "heading": "Why staging exists",
+              "text": "Staging lets you commit only part of your work. If you fixed a bug and also started a new feature, you can stage just the bug fix and commit it alone, keeping the history clean and easy to read."
+            }
+          ],
+          "mistakes": [
+            "Running git add . blindly and staging junk like log files or secret keys. Check git status first and use a .gitignore file.",
+            "Editing a file after staging it and forgetting to add it again. The commit uses the staged version, not the latest save."
+          ],
+          "exercise": {
+            "question": "What does git add do with a changed file?",
+            "options": [
+              "Saves it permanently into the history",
+              "Uploads it to GitHub",
+              "Places it in the staging area for the next commit",
+              "Creates a backup copy on your disk"
+            ],
+            "answer": 2,
+            "explanation": "git add only stages changes. They become part of history when you run git commit."
+          }
+        },
+        {
+          "slug": "git-commit",
+          "title": "git commit",
+          "objective": "Save a permanent snapshot of the staged changes with a clear message.",
+          "sections": [
+            {
+              "heading": "Making a commit",
+              "text": "A commit seals everything in the staging area into a permanent snapshot with an id, a timestamp, your name, and a message. The message should say what the change does, so future readers understand the history without opening the code.",
+              "code": "git commit -m \"Add contact form to homepage\"\n# view the history of commits\ngit log --oneline",
+              "language": "bash"
+            },
+            {
+              "heading": "Small commits win",
+              "text": "Commit early and often. A commit that does one focused thing is easy to review, easy to describe, and easy to undo. A giant commit touching twenty files for five reasons is none of those things."
+            }
+          ],
+          "mistakes": [
+            "Writing vague messages like \"stuff\" or \"fix\". Say what changed: \"Fix broken login link in navbar\".",
+            "Committing with nothing staged and wondering why Git says there is nothing to commit. Stage with git add first."
+          ],
+          "exercise": {
+            "question": "Which command saves the staged changes into the project history?",
+            "options": [
+              "git save -m \"message\"",
+              "git commit -m \"message\"",
+              "git add -m \"message\"",
+              "git snapshot \"message\""
+            ],
+            "answer": 1,
+            "explanation": "git commit -m records the staged changes as a snapshot with your message attached."
+          }
+        },
+        {
+          "slug": "branches",
+          "title": "Branches",
+          "objective": "Work on new ideas safely by creating and switching branches.",
+          "sections": [
+            {
+              "heading": "Parallel lines of work",
+              "text": "A branch is an independent line of history. The default branch is usually called main. When you want to try a feature or a fix, you create a branch, work there freely, and main stays untouched until you decide to bring the work back.",
+              "code": "# create a branch and move onto it\ngit switch -c dark-mode\n# see all branches, the * marks where you are\ngit branch\n# go back to main\ngit switch main",
+              "language": "bash"
+            },
+            {
+              "heading": "Why branches matter",
+              "text": "Branches make experiments cheap. If the idea works, you merge it. If it fails, you delete the branch and main never knew it existed. Teams use one branch per feature so people do not overwrite each other."
+            }
+          ],
+          "mistakes": [
+            "Doing all work directly on main, so a half-finished experiment breaks the stable version of the project.",
+            "Switching branches with unsaved changes and getting confused when files look different. Commit or stash before switching."
+          ],
+          "exercise": {
+            "question": "What happens to the main branch while you work on a feature branch?",
+            "options": [
+              "It is deleted temporarily",
+              "It stays unchanged until you merge your work into it",
+              "It automatically copies every change you make",
+              "It becomes read-only forever"
+            ],
+            "answer": 1,
+            "explanation": "Branches are independent. main only receives your feature work when you merge it in."
+          }
+        },
+        {
+          "slug": "merging",
+          "title": "Merging",
+          "objective": "Combine the work from one branch into another and handle conflicts calmly.",
+          "sections": [
+            {
+              "heading": "Bringing branches together",
+              "text": "Merging pulls the commits from one branch into another. You switch to the branch that should receive the work, usually main, then merge the feature branch into it. Git combines the histories automatically whenever it can.",
+              "code": "git switch main\ngit merge dark-mode\n# delete the branch once it is merged\ngit branch -d dark-mode",
+              "language": "bash"
+            },
+            {
+              "heading": "Merge conflicts",
+              "text": "If both branches changed the same lines, Git stops and marks the file with conflict markers so a human can choose. You edit the file to keep the right version, remove the markers, then stage and commit. A conflict is a question, not an error."
+            }
+          ],
+          "mistakes": [
+            "Panicking at a merge conflict and deleting the whole repo. Open the file, pick the correct lines, remove the markers, commit.",
+            "Merging while standing on the wrong branch. Always switch to the receiving branch first."
+          ],
+          "exercise": {
+            "question": "You want the dark-mode branch merged into main. What do you do first?",
+            "options": [
+              "Delete the dark-mode branch",
+              "Switch to main, then run git merge dark-mode",
+              "Run git merge main while on dark-mode",
+              "Rename dark-mode to main"
+            ],
+            "answer": 1,
+            "explanation": "You merge into the branch you are standing on, so move to main before merging the feature branch."
+          }
+        },
+        {
+          "slug": "github-basics",
+          "title": "GitHub Basics",
+          "objective": "Connect a local repo to GitHub and sync work with push, pull, and clone.",
+          "sections": [
+            {
+              "heading": "Connecting and pushing",
+              "text": "GitHub hosts a remote copy of your repo. You create an empty repository on the website, link it to your local repo as a remote named origin, then push your commits up. After the first push with -u, plain git push is enough.",
+              "code": "git remote add origin https://github.com/ada/recipe-app.git\ngit push -u origin main\n# later, after new commits\ngit push",
+              "language": "bash"
+            },
+            {
+              "heading": "Cloning and pulling",
+              "text": "To copy an existing GitHub project to your machine, use git clone with its URL. When the remote gains new commits, for example from a teammate, git pull downloads them and merges them into your local branch.",
+              "code": "git clone https://github.com/ada/recipe-app.git\ncd recipe-app\ngit pull",
+              "language": "bash"
+            }
+          ],
+          "mistakes": [
+            "Pushing secrets like API keys or password files. Once pushed, treat them as leaked; add such files to .gitignore before committing.",
+            "Forgetting to pull before starting work, then pushing and hitting rejections because the remote has commits you do not have."
+          ],
+          "exercise": {
+            "question": "Which command downloads new commits from GitHub into your local branch?",
+            "options": [
+              "git push",
+              "git pull",
+              "git commit",
+              "git init"
+            ],
+            "answer": 1,
+            "explanation": "git pull fetches the latest commits from the remote and merges them into your current branch. git push goes the other way."
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Which statement about Git and GitHub is correct?",
+          "options": [
+            "They are two names for the same website",
+            "Git runs on your computer, GitHub hosts repositories online",
+            "GitHub is required for Git to work",
+            "Git is only for websites, GitHub is only for apps"
+          ],
+          "answer": 1,
+          "explanation": "Git is a local version control tool. GitHub is one of several services that host Git repositories online."
+        },
+        {
+          "question": "What is the correct order of the basic Git workflow?",
+          "options": [
+            "commit, add, push",
+            "push, commit, add",
+            "add, commit, push",
+            "commit, push, add"
+          ],
+          "answer": 2,
+          "explanation": "You stage changes with add, seal them into history with commit, then upload them with push."
+        },
+        {
+          "question": "Which command turns the current folder into a new Git repository?",
+          "options": [
+            "git start",
+            "git new",
+            "git init",
+            "git create"
+          ],
+          "answer": 2,
+          "explanation": "git init creates the hidden .git folder and begins tracking the project."
+        },
+        {
+          "question": "What is the staging area used for?",
+          "options": [
+            "Storing deleted files permanently",
+            "Choosing exactly which changes go into the next commit",
+            "Hosting the project online",
+            "Running tests before every push"
+          ],
+          "answer": 1,
+          "explanation": "The staging area holds the changes you select with git add, and only those become part of the next commit."
+        },
+        {
+          "question": "Why do developers create branches?",
+          "options": [
+            "To make the repository download faster",
+            "To work on features or fixes without touching the stable main branch",
+            "Because Git requires a new branch for every commit",
+            "To delete old commits automatically"
+          ],
+          "answer": 1,
+          "explanation": "A branch is a safe, independent line of work. main stays stable until the branch is merged back in."
+        },
+        {
+          "question": "A merge conflict appears. What should you do?",
+          "options": [
+            "Delete the repository and clone it again",
+            "Edit the marked file, keep the correct lines, remove the markers, then stage and commit",
+            "Run git init to reset everything",
+            "Ignore it, Git resolves conflicts on its own eventually"
+          ],
+          "answer": 1,
+          "explanation": "Conflicts ask a human to choose between competing changes. You resolve the file by hand, then stage and commit the result."
+        }
+      ]
+    },
+    {
+      "slug": "flutter-intro",
+      "title": "Intro to Flutter",
+      "icon": "📱",
+      "category": "Mobile Development",
+      "level": "Intermediate",
+      "estimatedHours": 3,
+      "tagline": "Build mobile apps like we build Dash Rush",
+      "description": "Flutter is the toolkit Jovexa Labs used to build Dash Rush. Learn the core ideas: widgets, layouts, and your first running app.",
+      "lessons": [
+        {
+          "slug": "what-is-flutter",
+          "title": "What is Flutter?",
+          "objective": "Understand what Flutter is and why one codebase can target many platforms.",
+          "sections": [
+            {
+              "heading": "One codebase, many platforms",
+              "text": "Flutter lets you build apps for Android, iOS, web, and desktop from a single codebase written in the Dart language. Our game Dash Rush: Endless Run & Jump is built with Flutter.",
+              "code": "void main() {\n  print('Hello from Dart!');\n}",
+              "language": "dart"
+            },
+            {
+              "heading": "Everything is a widget",
+              "text": "In Flutter, every piece of the interface is a widget: text, buttons, padding, rows, even the app itself. You build screens by combining small widgets into bigger ones."
+            }
+          ],
+          "mistakes": [
+            "Expecting Flutter to use native platform widgets. Flutter draws its own UI, which is why it looks identical everywhere.",
+            "Skipping Dart basics. A little Dart knowledge makes Flutter far easier to learn."
+          ],
+          "exercise": {
+            "question": "What language are Flutter apps written in?",
+            "options": [
+              "JavaScript",
+              "Kotlin",
+              "Dart",
+              "Swift"
+            ],
+            "answer": 2,
+            "explanation": "Flutter apps are written in Dart, a language designed for building fast user interfaces."
+          }
+        },
+        {
+          "slug": "widgets-and-layout",
+          "title": "Widgets & Layout",
+          "objective": "Compose screens from Column, Row, and other layout widgets.",
+          "sections": [
+            {
+              "heading": "Composing a layout",
+              "text": "Column stacks children vertically, Row places them side by side, and Padding adds space. Most screens are just these pieces nested together.",
+              "code": "Column(\n  children: [\n    Text('Dash Rush'),\n    Text('Tap to jump!'),\n    ElevatedButton(\n      onPressed: startGame,\n      child: Text('Play'),\n    ),\n  ],\n)",
+              "language": "dart"
+            },
+            {
+              "heading": "Think in trees",
+              "text": "A Flutter screen is a tree of widgets. When you want to change how something looks, you usually wrap it in another widget rather than editing properties on the fly."
+            }
+          ],
+          "mistakes": [
+            "Building one giant widget. Split screens into small reusable widgets early.",
+            "Fighting layout errors by guessing. Read the error: it usually names the widget that needs a size."
+          ],
+          "exercise": {
+            "question": "Which widget stacks its children vertically?",
+            "options": [
+              "Row",
+              "Column",
+              "Stack",
+              "Padding"
+            ],
+            "answer": 1,
+            "explanation": "Column lays out children top to bottom. Row is the horizontal version."
+          }
+        },
+        {
+          "slug": "your-first-app",
+          "title": "Your First App",
+          "objective": "Run a complete minimal Flutter app and know where to go next.",
+          "sections": [
+            {
+              "heading": "A complete runnable app",
+              "text": "This is a minimal Flutter app. runApp starts it, MaterialApp provides theming and navigation, and Scaffold gives the screen its basic structure.",
+              "code": "import 'package:flutter/material.dart';\n\nvoid main() => runApp(const MyApp());\n\nclass MyApp extends StatelessWidget {\n  const MyApp({super.key});\n\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(\n      home: Scaffold(\n        appBar: AppBar(title: const Text('My First App')),\n        body: const Center(child: Text('Hello, Flutter!')),\n      ),\n    );\n  }\n}",
+              "language": "dart"
+            },
+            {
+              "heading": "Where to go next",
+              "text": "Install the Flutter SDK, run flutter create my_app, and start experimenting. State management, animation, and packages open up from there.",
+              "code": "flutter create my_app\ncd my_app\nflutter run",
+              "language": "bash"
+            }
+          ],
+          "mistakes": [
+            "Editing code without hot reload. Save the file while the app runs and changes appear instantly.",
+            "Ignoring the pubspec.yaml file. Dependencies and assets are declared there."
+          ],
+          "exercise": {
+            "question": "Which function starts a Flutter application?",
+            "options": [
+              "startApp()",
+              "runApp()",
+              "main.run()",
+              "flutter.start()"
+            ],
+            "answer": 1,
+            "explanation": "main() calls runApp() with your root widget to start the app."
+          }
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Flutter renders its interface by:",
+          "options": [
+            "Using each platform’s native widgets",
+            "Drawing its own widgets identically on every platform",
+            "Generating HTML pages",
+            "Embedding a web browser"
+          ],
+          "answer": 1,
+          "explanation": "Flutter paints its own UI, so apps look and behave the same across platforms."
+        },
+        {
+          "question": "Which widget gives a screen its basic structure like an app bar and body?",
+          "options": [
+            "Container",
+            "MaterialApp",
+            "Scaffold",
+            "Center"
+          ],
+          "answer": 2,
+          "explanation": "Scaffold provides the standard screen layout: app bar, body, floating buttons, and more."
+        },
+        {
+          "question": "What command creates a new Flutter project?",
+          "options": [
+            "flutter new my_app",
+            "flutter create my_app",
+            "dart create my_app",
+            "flutter init"
+          ],
+          "answer": 1,
+          "explanation": "flutter create my_app scaffolds a ready-to-run project."
+        },
+        {
+          "question": "What is hot reload?",
+          "options": [
+            "Restarting the phone",
+            "Reinstalling the app",
+            "Applying code changes to the running app instantly",
+            "Clearing the app cache"
+          ],
+          "answer": 2,
+          "explanation": "Hot reload injects your updated code into the running app so you see changes in about a second."
+        }
+      ]
+    }
+  ]
+}

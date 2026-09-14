@@ -1,0 +1,151 @@
+{
+  "paths": [
+    {
+      "slug": "frontend-developer",
+      "title": "Frontend Developer",
+      "icon": "🖥️",
+      "description": "Go from zero to building interactive, responsive websites. The core path for anyone who wants to build what users see.",
+      "steps": [
+        {
+          "title": "HTML",
+          "course": "html",
+          "note": "Structure pages with elements, links, images, and forms."
+        },
+        {
+          "title": "CSS",
+          "course": "css",
+          "note": "Style pages with layout, color, typography, flexbox, and grid."
+        },
+        {
+          "title": "JavaScript",
+          "course": "javascript",
+          "note": "Make pages interactive with logic, the DOM, and events."
+        },
+        {
+          "title": "Git & GitHub",
+          "course": "git",
+          "note": "Track your work and publish projects."
+        },
+        {
+          "title": "Responsive Design",
+          "course": "css",
+          "lesson": "responsive-design",
+          "note": "Make every layout work on phones first."
+        },
+        {
+          "title": "Mini Projects",
+          "course": "javascript",
+          "lesson": "mini-project-todo-app",
+          "note": "Cement your skills by shipping small builds."
+        }
+      ]
+    },
+    {
+      "slug": "python-developer",
+      "title": "Python Developer",
+      "icon": "🐍",
+      "description": "Learn the most beginner-friendly general-purpose language, from variables to files, then prove it with a project.",
+      "steps": [
+        {
+          "title": "Programming Basics with Python",
+          "course": "python",
+          "note": "Variables, types, conditions, and loops."
+        },
+        {
+          "title": "Functions and Data Structures",
+          "course": "python",
+          "lesson": "functions",
+          "note": "Functions, lists, and dictionaries."
+        },
+        {
+          "title": "Working with Files",
+          "course": "python",
+          "lesson": "working-with-files",
+          "note": "Read and write real data."
+        },
+        {
+          "title": "SQL",
+          "course": "sql",
+          "note": "Store and query data like a backend developer."
+        },
+        {
+          "title": "Git & GitHub",
+          "course": "git",
+          "note": "Version control for every project you build."
+        }
+      ]
+    },
+    {
+      "slug": "web-developer",
+      "title": "Web Developer",
+      "icon": "🌐",
+      "description": "The full picture: frontend skills plus the database and tooling knowledge every web developer needs.",
+      "steps": [
+        {
+          "title": "HTML",
+          "course": "html"
+        },
+        {
+          "title": "CSS",
+          "course": "css"
+        },
+        {
+          "title": "JavaScript",
+          "course": "javascript"
+        },
+        {
+          "title": "SQL",
+          "course": "sql"
+        },
+        {
+          "title": "Git & GitHub",
+          "course": "git"
+        }
+      ]
+    },
+    {
+      "slug": "programming-fundamentals",
+      "title": "Programming Fundamentals",
+      "icon": "🧠",
+      "description": "Not sure where to start? Learn the universal ideas of programming through Python and version control.",
+      "steps": [
+        {
+          "title": "Python",
+          "course": "python",
+          "note": "Learn variables, logic, loops, and functions in a friendly language."
+        },
+        {
+          "title": "Git & GitHub",
+          "course": "git",
+          "note": "Learn the tool every developer uses daily."
+        },
+        {
+          "title": "Pick a direction",
+          "note": "Continue into web development, databases, or mobile apps."
+        }
+      ]
+    },
+    {
+      "slug": "mobile-development-basics",
+      "title": "Mobile Development Basics",
+      "icon": "📱",
+      "description": "Follow the same route we took to build Dash Rush: web fundamentals, then Flutter.",
+      "steps": [
+        {
+          "title": "Programming Basics",
+          "course": "javascript",
+          "note": "Understand variables, functions, and logic first."
+        },
+        {
+          "title": "Git & GitHub",
+          "course": "git"
+        },
+        {
+          "title": "Intro to Flutter",
+          "course": "flutter-intro",
+          "note": "Widgets, layouts, and your first running app."
+        }
+      ]
+    }
+  ]
+}
