@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- INTERNET is the only permission. It is used for outbound links and future ad serving. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="jovexa_learn"
+        android:label="Jovexa Learn"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
