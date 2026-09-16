@@ -59,7 +59,7 @@ class JovexaTheme {
   }
 
   static ThemeData _base(ColorScheme scheme) {
-    return ThemeData(
+    final theme = ThemeData(
       useMaterial3: true,
       colorScheme: scheme,
       splashFactory: InkSparkle.splashFactory,
@@ -82,6 +82,13 @@ class JovexaTheme {
         isDense: true,
       ),
       chipTheme: const ChipThemeData(shape: StadiumBorder()),
+    );
+    // Emoji fallback so course icons render everywhere, including the
+    // screenshot test harness. Unknown families are skipped on devices.
+    return theme.copyWith(
+      textTheme: theme.textTheme.apply(
+        fontFamilyFallback: const ['Segoe UI Emoji', 'Noto Color Emoji'],
+      ),
     );
   }
 }
